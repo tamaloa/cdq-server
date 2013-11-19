@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @metric.name
+%p
+  %b Description:
+  = @metric.description
+%p
+  %b Expectation:
+  = @metric.expectation
+%p
+  %b Weight:
+  = @metric.weight
+%p
+  %b Dimension:
+  = @metric.dimension
+
+= link_to 'Edit', edit_metric_path(@metric)
+\|
+= link_to 'Back', metrics_path

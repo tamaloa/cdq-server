@@ -1,0 +1,27 @@
+%h1 Listing dimensions
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Expectation
+    %th Weight
+    %th App
+    %th
+    %th
+    %th
+
+  - @dimensions.each do |dimension|
+    %tr
+      %td= dimension.name
+      %td= dimension.description
+      %td= dimension.expectation
+      %td= dimension.weight
+      %td= dimension.app
+      %td= link_to 'Show', dimension
+      %td= link_to 'Edit', edit_dimension_path(dimension)
+      %td= link_to 'Destroy', dimension, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dimension', new_dimension_path
