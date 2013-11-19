@@ -1,0 +1,25 @@
+= form_for @dimension do |f|
+  - if @dimension.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dimension.errors.count, "error")} prohibited this dimension from being saved:"
+      %ul
+        - @dimension.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :expectation
+    = f.text_field :expectation
+  .field
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :app
+    = f.text_field :app
+  .actions
+    = f.submit 'Save'

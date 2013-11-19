@@ -1,0 +1,25 @@
+= form_for @metric do |f|
+  - if @metric.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@metric.errors.count, "error")} prohibited this metric from being saved:"
+      %ul
+        - @metric.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :expectation
+    = f.text_field :expectation
+  .field
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :dimension
+    = f.text_field :dimension
+  .actions
+    = f.submit 'Save'

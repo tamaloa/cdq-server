@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @dimension.name
+%p
+  %b Description:
+  = @dimension.description
+%p
+  %b Expectation:
+  = @dimension.expectation
+%p
+  %b Weight:
+  = @dimension.weight
+%p
+  %b App:
+  = @dimension.app
+
+= link_to 'Edit', edit_dimension_path(@dimension)
+\|
+= link_to 'Back', dimensions_path
