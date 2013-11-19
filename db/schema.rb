@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119141152) do
+ActiveRecord::Schema.define(version: 20131119145443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apps", force: true do |t|
+    t.string   "name"
+    t.float    "expectation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dimensions", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "expectation"
+    t.float    "weight"
+    t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dimensions", ["app_id"], name: "index_dimensions_on_app_id", using: :btree
+
+  create_table "metrics", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "expectation"
+    t.float    "weight"
+    t.integer  "dimension_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "metrics", ["dimension_id"], name: "index_metrics_on_dimension_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
