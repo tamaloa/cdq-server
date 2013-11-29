@@ -10,3 +10,7 @@
 = link_to 'Edit', edit_app_path(@app)
 \|
 = link_to 'Back', apps_path
+
+%ul
+- @app.dimensions.each do |dimension|
+  %li= link_to(dimension.name, dimension)
