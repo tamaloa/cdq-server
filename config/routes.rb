@@ -1,4 +1,6 @@
 DataQualityCollector::Application.routes.draw do
+  resources :values
+
   resources :metric_values
 
   resources :dimension_values
@@ -11,7 +13,7 @@ DataQualityCollector::Application.routes.draw do
 
   resources :apps
 
-  root :to => "home#index"
+  root :to => "apps#index"
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
 end
