@@ -26,6 +26,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    ansi (1.4.3)
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -87,6 +88,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hashie (2.0.5)
     hike (1.2.3)
     hpricot (0.8.6)
     html2haml (1.0.1)
@@ -111,9 +113,11 @@ GEM
     mime-types (1.25)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    minitest-spec-rails (4.7.5)
-      minitest (~> 4.7)
-      rails (>= 3.0, < 4.1)
+    minitest-reporters (0.14.23)
+      ansi
+      builder
+      minitest (>= 2.12, < 5.0)
+      powerbar
     minitest-wscolor (0.0.3)
       minitest (>= 2.3.1)
     multi_json (1.8.2)
@@ -123,6 +127,9 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.0)
     polyglot (0.3.3)
+    powerbar (1.0.11)
+      ansi (~> 1.4.0)
+      hashie (>= 1.1.0)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -201,7 +208,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
-  minitest-spec-rails
+  minitest-reporters
   minitest-wscolor
   pg
   quiet_assets

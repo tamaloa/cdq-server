@@ -25,8 +25,8 @@ group :test do
   gem 'cucumber-rails', :require=>false
   gem 'database_cleaner', '1.0.1'
   gem 'launchy'
-  gem 'minitest-spec-rails'
   gem 'minitest-wscolor'
+  gem 'minitest-reporters'
 end
 
 gem 'flot-rails'
