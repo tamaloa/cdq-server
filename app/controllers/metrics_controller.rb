@@ -12,19 +12,10 @@ class MetricsController < ApplicationController
   def show
   end
 
-  # GET /metrics/new
-  def new
-    @metric = Metric.new
-  end
-
-  # GET /metrics/1/edit
-  def edit
-  end
-
   # POST /metrics
   # POST /metrics.json
   def create
-    @metric = Metric.new(metric_params)
+    @metric = Metric.find_by_name(metric_params.fetch(:name)) || Metric.new(metric_params)
 
     respond_to do |format|
       if @metric.save

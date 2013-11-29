@@ -12,19 +12,10 @@ class DimensionsController < ApplicationController
   def show
   end
 
-  # GET /dimensions/new
-  def new
-    @dimension = Dimension.new
-  end
-
-  # GET /dimensions/1/edit
-  def edit
-  end
-
   # POST /dimensions
   # POST /dimensions.json
   def create
-    @dimension = Dimension.new(dimension_params)
+    @dimension = Dimension.find_by_name(dimension_params.fetch(:name)) || Dimension.new(dimension_params)
 
     respond_to do |format|
       if @dimension.save
