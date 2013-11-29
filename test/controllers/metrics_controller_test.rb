@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MetricsControllerTest < ActionController::TestCase
   setup do
-    @metric = metrics(:one)
+    @metric = Metric.create(name: "TestMetric001")
   end
 
   test "should get index" do
@@ -11,14 +11,10 @@ class MetricsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:metrics)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should create metric" do
     assert_difference('Metric.count') do
-      post :create, metric: { description: @metric.description, dimension_id: @metric.dimension_id, expectation: @metric.expectation, name: @metric.name, weight: @metric.weight }
+      post :create, metric: { dimension_id:1, name:"Test-Metric", weight: 1 }
     end
 
     assert_redirected_to metric_path(assigns(:metric))
@@ -26,11 +22,6 @@ class MetricsControllerTest < ActionController::TestCase
 
   test "should show metric" do
     get :show, id: @metric
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @metric
     assert_response :success
   end
 
