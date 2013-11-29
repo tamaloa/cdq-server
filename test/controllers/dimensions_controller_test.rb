@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DimensionsControllerTest < ActionController::TestCase
   setup do
-    @dimension = dimensions(:one)
+    @dimension = dimensions(:dimensions_001)
   end
 
   test "should get index" do
@@ -11,14 +11,10 @@ class DimensionsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:dimensions)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should create dimension" do
     assert_difference('Dimension.count') do
-      post :create, dimension: { app_id: @dimension.app_id, description: @dimension.description, expectation: @dimension.expectation, name: @dimension.name, weight: @dimension.weight }
+      post :create, dimension: { app_id: 1, name: "Test-Dimension", weight: 0.5 }
     end
 
     assert_redirected_to dimension_path(assigns(:dimension))
@@ -29,10 +25,6 @@ class DimensionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @dimension
-    assert_response :success
-  end
 
   test "should update dimension" do
     patch :update, id: @dimension, dimension: { app_id: @dimension.app_id, description: @dimension.description, expectation: @dimension.expectation, name: @dimension.name, weight: @dimension.weight }

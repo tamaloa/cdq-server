@@ -1,0 +1,191 @@
+---
+values_001:
+  id: '1'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '1'
+values_002:
+  id: '2'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.846'
+  metric_id: '2'
+values_003:
+  id: '3'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '3'
+values_004:
+  id: '4'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '4'
+values_005:
+  id: '5'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '5'
+values_006:
+  id: '6'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '6'
+values_007:
+  id: '7'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '7'
+values_008:
+  id: '8'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '8'
+values_009:
+  id: '9'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '9'
+values_010:
+  id: '10'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '10'
+values_011:
+  id: '11'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '11'
+values_012:
+  id: '12'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '12'
+values_013:
+  id: '13'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '13'
+values_014:
+  id: '14'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '14'
+values_015:
+  id: '15'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '15'
+values_016:
+  id: '16'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '16'
+values_017:
+  id: '17'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.666666666666667'
+  metric_id: '17'
+values_018:
+  id: '18'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.666666666666667'
+  metric_id: '18'
+values_019:
+  id: '19'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.5'
+  metric_id: '19'
+values_020:
+  id: '20'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '20'
+values_021:
+  id: '21'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.666666666666667'
+  metric_id: '21'
+values_022:
+  id: '22'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '22'
+values_023:
+  id: '23'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '23'
+values_024:
+  id: '24'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '24'
+values_025:
+  id: '25'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '25'
+values_026:
+  id: '26'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '26'
+values_027:
+  id: '27'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '27'
+values_028:
+  id: '28'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '28'
+values_029:
+  id: '29'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '29'
+values_030:
+  id: '30'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '30'
+values_031:
+  id: '31'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.333333333333333'
+  metric_id: '31'
+values_032:
+  id: '32'
+  stamp: '2013-11-29 14:20:10'
+  value: '0'
+  metric_id: '32'
+values_033:
+  id: '33'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '33'
+values_034:
+  id: '34'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.666666666666667'
+  metric_id: '34'
+values_035:
+  id: '35'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '35'
+values_036:
+  id: '36'
+  stamp: '2013-11-29 14:20:10'
+  value: '0.00266666666666667'
+  metric_id: '36'
+values_037:
+  id: '37'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '37'
+values_038:
+  id: '38'
+  stamp: '2013-11-29 14:20:10'
+  value: '1'
+  metric_id: '38'

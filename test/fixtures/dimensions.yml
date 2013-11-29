@@ -1,0 +1,73 @@
+---
+dimensions_001:
+  id: '1'
+  name: Availability
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:24.346667'
+  updated_at: '2013-11-29 14:20:24.346667'
+dimensions_002:
+  id: '2'
+  name: Currency
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:25.29958'
+  updated_at: '2013-11-29 14:20:25.29958'
+dimensions_003:
+  id: '3'
+  name: Internal Completeness
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:26.444024'
+  updated_at: '2013-11-29 14:20:26.444024'
+dimensions_004:
+  id: '4'
+  name: Internal Consistency
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:27.151417'
+  updated_at: '2013-11-29 14:20:27.151417'
+dimensions_005:
+  id: '5'
+  name: Metadata
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:27.222177'
+  updated_at: '2013-11-29 14:20:27.222177'
+dimensions_006:
+  id: '6'
+  name: Population Completeness
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:27.249097'
+  updated_at: '2013-11-29 14:20:27.249097'
+dimensions_007:
+  id: '7'
+  name: Syntactic Accuracy
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:27.304266'
+  updated_at: '2013-11-29 14:20:27.304266'
+dimensions_008:
+  id: '8'
+  name: Timeliness
+  description: 
+  expectation: 
+  weight: 
+  app_id: '1'
+  created_at: '2013-11-29 14:20:27.409458'
+  updated_at: '2013-11-29 14:20:27.409458'
