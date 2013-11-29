@@ -19,3 +19,16 @@
 = link_to 'Edit', edit_metric_path(@metric)
 \|
 = link_to 'Back', metrics_path
+
+#chart_values{data: { values: @metric.values.map{|v| [v.stamp.to_i*1000, v.value] }}}
+
+#chart
+
+#overview
+
+
+%ul
+- @metric.values.each do |metric|
+  %li
+    = metric.stamp
+    = metric.value
