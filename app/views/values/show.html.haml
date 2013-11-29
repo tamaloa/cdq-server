@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Stamp:
+  = @value.stamp
+%p
+  %b Value:
+  = @value.value
+%p
+  %b Metric:
+  = @value.metric
+
+= link_to 'Edit', edit_value_path(@value)
+\|
+= link_to 'Back', values_path

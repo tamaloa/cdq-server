@@ -12,19 +12,11 @@ class AppsController < ApplicationController
   def show
   end
 
-  # GET /apps/new
-  def new
-    @app = App.new
-  end
-
-  # GET /apps/1/edit
-  def edit
-  end
-
   # POST /apps
   # POST /apps.json
   def create
-    @app = App.new(app_params)
+
+    @app = App.find_by_name(app_params.fetch(:name)) || App.new(app_params)
 
     respond_to do |format|
       if @app.save
