@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class MetricsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @metric = Metric.create(name: "TestMetric001")
   end
