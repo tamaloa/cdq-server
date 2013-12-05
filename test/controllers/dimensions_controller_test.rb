@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class DimensionsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @dimension = dimensions(:dimensions_001)
   end

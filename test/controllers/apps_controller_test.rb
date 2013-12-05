@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class AppsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @app = apps(:apps_001)
   end

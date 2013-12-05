@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class ValuesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @value = values(:values_001)
   end
