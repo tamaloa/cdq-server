@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20131206141317) do
 
   create_table "rollups", force: true do |t|
     t.datetime "stamp"
-    t.float    "avg"
-    t.float    "min"
-    t.float    "max"
+    t.float    "avg",          default: 0.0
+    t.float    "min",          default: 1.0
+    t.float    "max",          default: 0.0
     t.string   "resolution"
     t.integer  "metric_id"
     t.integer  "dimension_id"

@@ -6,8 +6,14 @@ class Rollup < ActiveRecord::Base
 
   def self.add(value)
     resolutions.each do |resolution|
-      rollup = new(metric: value.metric, stamp: value.stamp, avg: value.value, resolution: resolution)
+      rollup = find_or_create_by(
+          metric: value.metric,
+          stamp: Resolution.utc_timestamp_for(resolution, value.stamp),
+          resolution: resolution)
       rollup.values << value
+      rollup.avg = rollup.values.average(:value)
+      rollup.max = (rollup.max > value.value) ? rollup.max : value.value
+      rollup.min = (rollup.min < value.value) ? rollup.min : value.value
       rollup.save
     end
 

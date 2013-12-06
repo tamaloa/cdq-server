@@ -21,7 +21,7 @@ class RollupTest < ActiveSupport::TestCase
   end
 
   test "rollup has default resolutions" do
-    assert Rollup.resolutions.eql? [:hourly, :daily, :weekly, :monthly, :yearly]
+    assert Rollup.resolutions.eql? [:hour, :day, :week, :month, :year]
   end
 
   test "metric rollup should be auto created for all resolutions" do
@@ -31,7 +31,7 @@ class RollupTest < ActiveSupport::TestCase
     end
   end
 
-  test "metric rollup should be updated if value is recorded inside resolution" do
+  test "metric rollup should be only updated if value is recorded inside resolution" do
     Timecop.freeze(2013, 12, 1, 13, 10, 0) do
       @metric.record(0.2, Time.now)
       assert_no_difference ->{ Rollup.count } do
@@ -39,6 +39,17 @@ class RollupTest < ActiveSupport::TestCase
       end
     end
 
+  end
+
+  test "metric rollup should calculate avg, min, max values" do
+    Timecop.freeze(2013, 12, 1, 13, 10, 0) do
+      @metric.record(0.2, Time.now)
+      @metric.record(0.6, Time.now + 20.minutes)
+      rollup = Rollup.where(metric: @metric, resolution: :hour).first
+      assert_equal ((0.6 + 0.2)/2), rollup.avg
+      assert_equal 0.6, rollup.max
+      assert_equal 0.2, rollup.min
+    end
   end
 
 end
