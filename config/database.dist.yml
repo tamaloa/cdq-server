@@ -1,0 +1,12 @@
+base: &base
+  adapter: postgresql
+  encoding: unicode
+  username: teamcity-worker
+
+test:
+  database: data_quality_collector_test
+  <<: *base
+
+staging:
+  database: data_quality_collector_staging
+  <<: *base
