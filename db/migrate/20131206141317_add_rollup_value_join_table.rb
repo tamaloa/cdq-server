@@ -5,5 +5,7 @@ class AddRollupValueJoinTable < ActiveRecord::Migration
       t.references :value
     end
 
+    add_index :rollups_values, [:rollup_id, :value_id], unique: true
+
   end
 end
