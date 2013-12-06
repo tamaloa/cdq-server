@@ -27,6 +27,7 @@ group :test do
   gem 'launchy'
   gem 'minitest-wscolor'
   gem 'minitest-reporters'
+  gem 'timecop'
 end
 
 gem 'flot-rails'

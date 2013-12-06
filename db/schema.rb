@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129135032) do
+ActiveRecord::Schema.define(version: 20131206141317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,26 @@ ActiveRecord::Schema.define(version: 20131129135032) do
   end
 
   add_index "metrics", ["dimension_id"], name: "index_metrics_on_dimension_id", using: :btree
+
+  create_table "rollups", force: true do |t|
+    t.datetime "stamp"
+    t.float    "avg"
+    t.float    "min"
+    t.float    "max"
+    t.string   "resolution"
+    t.integer  "metric_id"
+    t.integer  "dimension_id"
+    t.integer  "app_id"
+  end
+
+  add_index "rollups", ["app_id"], name: "index_rollups_on_app_id", using: :btree
+  add_index "rollups", ["dimension_id"], name: "index_rollups_on_dimension_id", using: :btree
+  add_index "rollups", ["metric_id"], name: "index_rollups_on_metric_id", using: :btree
+
+  create_table "rollups_values", force: true do |t|
+    t.integer "rollup_id"
+    t.integer "value_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

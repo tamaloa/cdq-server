@@ -189,3 +189,8 @@ values_038:
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '38'
+values_039:
+  id: '39'
+  stamp: '2013-11-29 14:20:11'
+  value: '0.8'
+  metric_id: '1'
