@@ -1,0 +1,1 @@
+class ResolutionException < StandardError ; end

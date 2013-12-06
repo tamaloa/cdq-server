@@ -8,7 +8,8 @@ class Metric < ActiveRecord::Base
   end
 
   def record(value, stamp = Time.now)
-    Value.create!(value: value, stamp: stamp, metric: self)
+    value = Value.create(value: value, stamp: stamp, metric: self)
+    Rollup.add(value)
     #MetricValue.new(value: value, stamp: stamp)
     #MetricValueRollup.create_or_update(stamp)
     #DimensionValueRollup.create_or_update(stamp)
