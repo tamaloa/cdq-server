@@ -15,7 +15,7 @@ class RollupTest < ActiveSupport::TestCase
   end
 
   test "metric rollups should be autocreated adding a value" do
-    assert_difference ->{ Rollup.count }, Rollup.resolutions.count do
+    assert_difference ->{ Rollup.count }, Rollup.resolutions.count*3 do
       @metric.record(0.38, Time.now)
     end
   end
@@ -52,4 +52,12 @@ class RollupTest < ActiveSupport::TestCase
     end
   end
 
+  test "rollup should be auto created for metric, dimension and app" do
+    @metric.record(0.5, Time.now)
+    Rollup.resolutions.each do |resolution|
+      refute_empty Rollup.where(metric: @metric, resolution: resolution)
+      refute_empty Rollup.where(dimension: @metric.dimension, resolution: resolution)
+      refute_empty Rollup.where(app: @metric.dimension.app, resolution: resolution)
+    end
+  end
 end
