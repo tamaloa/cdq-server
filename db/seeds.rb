@@ -22,18 +22,28 @@ total_values = total_measurement_runs * values_per_run
 
 p "A total of #{total_values} values will be stored in the database"
 
-starting_time = time_range.ago
-
-total_time = start = Time.now
-
-
 number_of_apps.times do |i|
   app = App.create(name: "App_#{i}")
   dimensions_per_app.times do |i|
-    dimension = Dimension.create(name: "#{app.name}-Dim_#{i}")
-    app.dimensions << dimension
+    dimension = Dimension.create(name: "#{app.name}-Dim_#{i}", app: app)
     metric_per_dimension.times do |i|
-      Metric.create(name: "#{dimension.name}-Metric_#{i}")
+      Metric.create(name: "#{dimension.name}-Metric_#{i}", dimension: dimension)
     end
   end
 end
+
+
+total_time = start = Time.now
+stamp = time_range.ago
+
+total_measurement_runs.to_i.times do |run|
+  stamp = stamp + measurement_frequency
+  Metric.all.each do |metric|
+    metric.record(Random.rand, stamp)
+  end
+  now = Time.now
+  p "Finished one run in: #{now - start}"
+  start = now
+end
+
+p "Total Time needed was #{Time.now - total_time}"
