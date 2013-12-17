@@ -40,7 +40,12 @@ stamp = time_range.ago
 total_measurement_runs.to_i.times do |run|
   stamp = stamp + measurement_frequency
   Metric.all.each do |metric|
-    metric.record(Random.rand, stamp)
+    last_value = metric.values.last.try(:value) || Random.rand
+    random_small_value = Random.rand(0.1) - 0.05
+    new_value = last_value + random_small_value
+    new_value = 1.0 if new_value > 1.0
+    new_value = 0.0 if new_value < 0.0
+    metric.record(new_value , stamp)
   end
   now = Time.now
   p "Finished one run in: #{now - start}"
