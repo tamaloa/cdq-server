@@ -8,6 +8,8 @@ class Metric < ActiveRecord::Base
   end
 
   def record(value, stamp = Time.now)
+    return false if value > 1.0
+    return false if value < 0.0
     value = Value.create(value: value, stamp: stamp, metric: self)
     Rollup.add(value)
     #MetricValue.new(value: value, stamp: stamp)

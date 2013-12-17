@@ -22,4 +22,11 @@ class MetricTest < ActiveSupport::TestCase
     assert @metric.values.last.value.eql?(0.8)
   end
 
+  test "metric should only record values between zero and one" do
+    refute @metric.record(1.1)
+    refute @metric.record(-0.1)
+    assert @metric.record(1.0)
+    assert @metric.record(0.0)
+  end
+
 end
