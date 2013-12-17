@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+source 'http://my-very-own-gemserver.example.org"'
+
 ruby '2.0.0'
 gem 'rails', '4.0.1'
 gem 'sass-rails', '~> 4.0.0'
@@ -14,6 +16,7 @@ gem 'haml-rails'
 gem 'pg'
 gem 'therubyracer', :platform=>:ruby
 group :development do
+  gem 'capistrano-custom'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'html2haml'
