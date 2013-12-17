@@ -3,6 +3,10 @@ base: &base
   encoding: unicode
   username: teamcity-worker
 
+development:
+  database: data_quality_collector_development
+  <<: *base
+
 test:
   database: data_quality_collector_test
   <<: *base
