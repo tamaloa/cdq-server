@@ -12,11 +12,11 @@ measurement_frequency = 1.hour
 time_range = 5.years
 total_measurement_runs = time_range / measurement_frequency
 
-number_of_apps = 20
-dimensions_per_app = 10
-metric_per_dimension = 10
+number_of_apps = 3
+max_dimensions_per_app = 20
+max_metric_per_dimension = 20
 
-values_per_run = number_of_apps * dimensions_per_app * metric_per_dimension
+values_per_run = number_of_apps * max_dimensions_per_app * max_metric_per_dimension
 
 total_values = total_measurement_runs * values_per_run
 
@@ -24,14 +24,15 @@ p "A total of #{total_values} values will be stored in the database"
 
 number_of_apps.times do |i|
   app = App.create(name: "App_#{i}")
-  dimensions_per_app.times do |i|
+  Random.rand(max_dimensions_per_app).times do |i|
     dimension = Dimension.create(name: "#{app.name}-Dim_#{i}", app: app)
-    metric_per_dimension.times do |i|
+    Random.rand(max_metric_per_dimension).times do |i|
       Metric.create(name: "#{dimension.name}-Metric_#{i}", dimension: dimension)
     end
   end
 end
 
+p "Finished initial creating Apps (#{App.count}), Dimensions (#{Dimension.count}), and Metrics (#{Metric.count})"
 
 total_time = start = Time.now
 stamp = time_range.ago
