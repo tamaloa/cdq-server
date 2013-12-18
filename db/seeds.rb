@@ -34,12 +34,17 @@ end
 
 p "Finished initial creating Apps (#{App.count}), Dimensions (#{Dimension.count}), and Metrics (#{Metric.count})"
 
+p "Creating App to measure seeding :)"
+app = App.create(name: "Data Quality Collector")
+dimension = Dimension.create(name: "Seeding Database", app: app)
+@seed_run_metric = Metric.create(name: "Seed Run time in seconds / 3600", dimension: dimension)
+
 total_time = start = Time.now
 stamp = time_range.ago
 
 total_measurement_runs.to_i.times do |run|
   stamp = stamp + measurement_frequency
-  Metric.all.each do |metric|
+  Metric.all.reject{|m| m.eql?(@seed_run_metric)}.each do |metric|
     last_value = metric.values.last.try(:value) || Random.rand
     random_small_value = Random.rand(0.1) - 0.05
     new_value = last_value + random_small_value
@@ -48,7 +53,9 @@ total_measurement_runs.to_i.times do |run|
     metric.record(new_value , stamp)
   end
   now = Time.now
-  p "Finished one run in: #{now - start}"
+  seconds_for_run = now - start
+  p "Finished one run in: #{seconds_for_run}"
+  @seed_run_metric.record((seconds_for_run/3600), now)
   start = now
 end
 
