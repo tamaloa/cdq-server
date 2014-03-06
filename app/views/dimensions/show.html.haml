@@ -23,4 +23,6 @@
 
 %ul
 - @dimension.metrics.each do |metric|
-  %li= link_to(metric.name, metric)
+  %li
+    = link_to(metric.name, metric)
+    = metric.values.last.value
