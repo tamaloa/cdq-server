@@ -28,7 +28,8 @@
 
 
 %ul
-- @metric.values.each do |metric|
+- @metric.values.limit(100).each do |value|
   %li
-    = metric.stamp
-    = metric.value
+    = value.stamp
+    = value.value
+    = link_to "Improvement Advice", value if value.improvement_advice.present?
