@@ -16,11 +16,13 @@ class ValuesControllerTest < ActionController::TestCase
 
   test "should create value" do
     assert_difference('Value.count') do
-      post :create, value: { metric_id: @value.metric_id, stamp: @value.stamp, value: @value.value,
+      post :create, value: { metric_id: @value.metric_id, stamp: Time.now.utc, value: @value.value,
                              improvement_advice: "Some Abitrary Text! "*100 }
     end
 
     assert_redirected_to value_path(assigns(:value))
+    assert Value.last.improvement_advice.present?
+    assert Value.last.stamp.present?
   end
 
   test "should show value" do
