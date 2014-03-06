@@ -11,7 +11,7 @@
   = @value.metric
 %p
   %b Improvement Advice:
-  = html_save(@value.improvement_advice)
+  = @value.improvement_advice.html_safe
 
 = link_to 'Edit', edit_value_path(@value)
 \|
