@@ -11,7 +11,7 @@
   = @value.metric
 %p
   %b Improvement Advice:
-  = @value.improvement_advice.html_safe
+  = @value.improvement_advice.try(:html_safe)
 
 = link_to 'Edit', edit_value_path(@value)
 \|

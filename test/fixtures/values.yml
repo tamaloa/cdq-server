@@ -4,6 +4,7 @@ values_001:
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '1'
+  improvement_advice: 'A longer string suggesting improvements'
 values_002:
   id: '2'
   stamp: '2013-11-29 14:20:10'
