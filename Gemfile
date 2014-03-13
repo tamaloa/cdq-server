@@ -34,3 +34,5 @@ group :test do
 end
 
 gem 'flot-rails'
+
+gem 'font-awesome-rails'

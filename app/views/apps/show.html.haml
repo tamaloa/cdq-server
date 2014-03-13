@@ -13,4 +13,4 @@
 
 %ul
 - @app.dimensions.each do |dimension|
-  %li= link_to(dimension.name, dimension)
+  =render :partial => 'dimensions/list_item', locals: {dimension: dimension}

@@ -1,0 +1,16 @@
+.row
+  .col-md-4
+    =link_to dimension.name, dimension
+  .col-md-1
+    =expectation_met_icon(dimension)
+  .col-md-1
+    = number_with_precision dimension.current_score
+  -#
+  -#%td= dimension.name
+  -#%td= dimension.description
+  -#%td= dimension.expectation
+  -#%td= dimension.weight
+  -#%td= dimension.app
+  -#%td= link_to 'Show', dimension
+  -#%td= link_to 'Edit', edit_dimension_path(dimension)
+  -#%td= link_to 'Destroy', dimension, :method => :delete, :data => { :confirm => 'Are you sure?' }
