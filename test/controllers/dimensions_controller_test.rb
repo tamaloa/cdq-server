@@ -22,6 +22,15 @@ class DimensionsControllerTest < ActionController::TestCase
     assert_redirected_to dimension_path(assigns(:dimension))
   end
 
+  test "should update dimension expectation only if given" do
+    skip "Fix dimension controller update"
+    old_expectation = Dimension.find_by_name("Availability").expectation
+    assert_no_difference('Dimension.count') do
+      post :create, dimension: { app_id: 1, name: "Availability"}
+    end
+    assert_equal old_expectation, Dimension.find_by_name("Availability").expectation
+  end
+
   test "should show dimension" do
     get :show, id: @dimension
     assert_response :success

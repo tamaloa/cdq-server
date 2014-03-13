@@ -21,8 +21,5 @@
 = link_to 'Back', dimensions_path
 
 
-%ul
 - @dimension.metrics.each do |metric|
-  %li
-    = link_to(metric.name, metric)
-    = metric.values.last.value
+  = render partial: 'metrics/list_item', locals: {metric: metric}

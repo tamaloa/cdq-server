@@ -1,0 +1,9 @@
+.row
+  .col-md-4
+    =link_to metric.name, metric
+  .col-md-1
+    = "weight: #{metric.weight.try(:to_i)}"
+  .col-md-1
+    =expectation_met_icon(metric)
+  .col-md-1
+    = "score: #{number_with_precision metric.value}"

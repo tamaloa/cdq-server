@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306124851) do
+ActiveRecord::Schema.define(version: 20140313132325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140306124851) do
   create_table "dimensions", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.float    "expectation"
+    t.float    "expectation", default: 0.0
     t.float    "weight"
     t.integer  "app_id"
     t.datetime "created_at"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140306124851) do
     t.string   "name"
     t.text     "description"
     t.float    "expectation"
-    t.float    "weight"
+    t.float    "weight",       default: 1.0
     t.integer  "dimension_id"
     t.datetime "created_at"
     t.datetime "updated_at"

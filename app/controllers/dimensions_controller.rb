@@ -16,7 +16,7 @@ class DimensionsController < ApplicationController
   # POST /dimensions.json
   def create
     @dimension = Dimension.find_by_name(dimension_params.fetch(:name)) || Dimension.new(dimension_params)
-
+    @dimension.expectation = dimension_params.fetch(:expectation, 0.0)
     respond_to do |format|
       if @dimension.save
         format.html { redirect_to @dimension, notice: 'Dimension was successfully created.' }

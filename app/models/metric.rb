@@ -22,4 +22,17 @@ class Metric < ActiveRecord::Base
     #AppValueRollup.create_or_update(stamp)
     ## see before
   end
+
+  def value
+    return 0.0 unless values.last
+    values.last.value
+  end
+
+  def expectation_met?
+    return false unless dimension
+    return true unless dimension.expectation
+    value >= dimension.expectation
+  end
+
+
 end
