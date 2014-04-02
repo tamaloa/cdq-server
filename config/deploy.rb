@@ -20,5 +20,5 @@ require 'capistrano-custom/defaults'
 #require "whenever/capistrano"
 
 #Notify airbrake of deploy
-#require './config/boot'
-#require 'airbrake/capistrano'
+require './config/boot'
+require 'airbrake/capistrano'
