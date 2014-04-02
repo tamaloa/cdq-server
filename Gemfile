@@ -16,7 +16,7 @@ gem 'haml-rails'
 gem 'pg'
 gem 'therubyracer', :platform=>:ruby
 group :development do
-  gem 'capistrano-custom'
+  gem 'capistrano-custom'     # Custom capistrano tasks and defaults. Allows to easily deploy to a production and a staging server and additionally to three predefined dev domains.
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'html2haml'
@@ -36,3 +36,6 @@ end
 gem 'flot-rails'
 
 gem 'font-awesome-rails'
+
+gem 'newrelic_rpm'          # Ruby performance management system
+gem 'airbrake'              # When an uncaught exception occurs, Airbrake will POST the relevant data to the Airbrake server specified in your environment.
