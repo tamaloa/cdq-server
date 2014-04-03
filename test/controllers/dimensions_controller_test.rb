@@ -22,13 +22,33 @@ class DimensionsControllerTest < ActionController::TestCase
     assert_redirected_to dimension_path(assigns(:dimension))
   end
 
+  test "should create dimension and store all attributes" do
+    assert_difference('Dimension.count') do
+      post :create, dimension: { app_id: 1, name: "Test-Dimension", weight: 0.5, expectation: 0.5 }
+    end
+
+    assert_redirected_to dimension_path(assigns(:dimension))
+  end
+
+  test "should create dimension with same name for different app" do
+    assert_difference('Dimension.count') do
+      post :create, dimension: { app_id: 2, name: "Timeliness"}
+    end
+  end
+
   test "should update dimension expectation only if given" do
-    skip "Fix dimension controller update"
-    old_expectation = Dimension.find_by_name("Availability").expectation
+    old_expectation = dimensions(:dimensions_001).expectation
     assert_no_difference('Dimension.count') do
       post :create, dimension: { app_id: 1, name: "Availability"}
     end
-    assert_equal old_expectation, Dimension.find_by_name("Availability").expectation
+    assert_equal old_expectation, Dimension.find_by_name_and_app_id("Availability", 1).expectation
+  end
+
+  test "should update dimension expectation if given" do
+    assert_no_difference('Dimension.count') do
+      post :create, dimension: { app_id: 1, name: "Availability", expectation: 0.7}
+    end
+    assert_equal 0.7, Dimension.find_by_name_and_app_id("Availability", 1).expectation
   end
 
   test "should show dimension" do

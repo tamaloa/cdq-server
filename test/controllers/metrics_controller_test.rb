@@ -22,6 +22,14 @@ class MetricsControllerTest < ActionController::TestCase
     assert_redirected_to metric_path(assigns(:metric))
   end
 
+  test "should create metric with same name but in different dimension" do
+    assert_difference('Metric.count') do
+      post :create, metric: { dimension_id:1, name:"Company-count-should-be-1500" }
+    end
+
+    assert_redirected_to metric_path(assigns(:metric))
+  end
+
   test "should show metric" do
     get :show, id: @metric
     assert_response :success
