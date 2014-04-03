@@ -15,7 +15,8 @@ class MetricsController < ApplicationController
   # POST /metrics
   # POST /metrics.json
   def create
-    @metric = Metric.find_by_name(metric_params.fetch(:name)) || Metric.new(metric_params)
+    @metric = Metric.find_by(name: metric_params.fetch(:name), dimension_id: metric_params.fetch(:dimension_id)) ||
+        Metric.new(metric_params)
 
     respond_to do |format|
       if @metric.save
