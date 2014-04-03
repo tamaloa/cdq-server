@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 source 'http://my-very-own-gemserver.example.org"'
 
 ruby '2.0.0'
-gem 'rails', '4.0.1'
-gem 'sass-rails', '~> 4.0.0'
+
+gem 'rails'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
@@ -24,18 +25,14 @@ group :development do
   gem 'rails_layout'
 end
 group :test do
-  gem 'capybara'
-  gem 'cucumber-rails', :require=>false
-  gem 'database_cleaner', '1.0.1'
-  gem 'launchy'
   gem 'minitest-wscolor'
   gem 'minitest-reporters'
   gem 'timecop'
 end
 
-gem 'flot-rails'
+gem 'flot-rails'            # js-graphs for displaying development over time
 
-gem 'font-awesome-rails'
+gem 'font-awesome-rails'    # Nice icons as font
 
 gem 'newrelic_rpm'          # Ruby performance management system
 gem 'airbrake'              # When an uncaught exception occurs, Airbrake will POST the relevant data to the Airbrake server specified in your environment.
