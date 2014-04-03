@@ -34,18 +34,18 @@ class AppsControllerTest < ActionController::TestCase
         ]
     }
 
-    #{"name"=>"test2", "expectation"=>0.4,
-    # "dimensions"=>[
-    #     {"name"=>"completeness",
-    #      "metrics"=>[{"name"=>"C001"}, {"name"=>"C002", "weight"=>0.5}]},
-    #     {"name"=>"test4"}], "app"=>{"name"=>"test2", "expectation"=>0.4}}
-
-
     assert_difference('App.count') do
       post :create, app: app
     end
 
     assert_redirected_to app_path(assigns(:app))
+  end
+
+  test "should not create app which already exits" do
+    app = { name: 'ipib' }
+    assert_no_difference('App.count') do
+      post :create, app: app
+    end
   end
 
   test "should show app" do
