@@ -1,6 +1,7 @@
 class Metric < ActiveRecord::Base
   belongs_to :dimension
   has_many :values, -> { order "stamp" }
+  has_many :rollups
 
 
   def to_s
@@ -12,15 +13,6 @@ class Metric < ActiveRecord::Base
     return false if value < 0.0
     value = Value.create(value: value, stamp: stamp, metric: self)
     Rollup.add(value)
-    #MetricValue.new(value: value, stamp: stamp)
-    #MetricValueRollup.create_or_update(stamp)
-    #DimensionValueRollup.create_or_update(stamp)
-    ## for each resolution (calculated from stamp) do
-    ## rollup_value refresh
-    ### select all last values from resolution(stamp) for dimension
-    ### calculate weighed average, min, max
-    #AppValueRollup.create_or_update(stamp)
-    ## see before
   end
 
   def value
@@ -32,6 +24,16 @@ class Metric < ActiveRecord::Base
     return false unless dimension
     return true unless dimension.expectation
     value >= dimension.expectation
+  end
+
+  def values_for_chart
+    hours_in_one_week = (24*7)
+    points = rollups.where(resolution: :hour).order(:stamp).limit(hours_in_one_week)
+    points.map{|r| [r.stamp.to_i*1000, r.avg]}
+  end
+
+  def last_values
+    values.limit(10)
   end
 
 

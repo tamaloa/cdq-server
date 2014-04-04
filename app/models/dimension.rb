@@ -1,6 +1,7 @@
 class Dimension < ActiveRecord::Base
   belongs_to :app
   has_many :metrics
+  has_many :rollups
 
   def to_s
     name
@@ -16,4 +17,15 @@ class Dimension < ActiveRecord::Base
     weighted_values =  metrics.map{|m| m.value*m.weight}
     weighted_values.sum / metrics.map(&:weight).sum
   end
+
+  def values_for_chart
+    hours_in_one_week = (24*7)
+    points = rollups.where(resolution: :hour).order(:stamp).limit(hours_in_one_week)
+    points.map{|r| [r.stamp.to_i*1000, r.avg]}
+  end
+
+  def last_values
+    metrics.map{|m| m.values.last}
+  end
+
 end

@@ -35,4 +35,8 @@ class MetricTest < ActiveSupport::TestCase
     assert @metric.reload.expectation_met?
   end
 
+  test "metric should return values for chart" do
+    assert @metric.values_for_chart
+  end
+
 end
