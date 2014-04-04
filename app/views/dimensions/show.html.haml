@@ -1,8 +1,8 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @dimension.name
+= render partial: 'partials/nav_hierarchy', locals: {app: @dimension.app, current_score: @dimension.current_score,
+                                                     dimension: @dimension}
+
 %p
   %b Description:
   = @dimension.description
@@ -12,14 +12,8 @@
 %p
   %b Weight:
   = @dimension.weight
-%p
-  %b App:
-  = @dimension.app
 
-= link_to 'Edit', edit_dimension_path(@dimension)
-\|
-= link_to 'Back', dimensions_path
-
+%h3 Metrics
 
 - @dimension.metrics.each do |metric|
   = render partial: 'metrics/list_item', locals: {metric: metric}
