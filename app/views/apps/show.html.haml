@@ -1,16 +1,8 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @app.name
-%p
-  %b Expectation:
-  = @app.expectation
+= render partial: 'partials/nav_hierarchy', locals: {app: @app, current_score: @app.current_score}
 
-= link_to 'Edit', edit_app_path(@app)
-\|
-= link_to 'Back', apps_path
-
+%h3 Dimensions
 %ul
 - @app.dimensions.each do |dimension|
   =render :partial => 'dimensions/list_item', locals: {dimension: dimension}
