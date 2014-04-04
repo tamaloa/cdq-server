@@ -1,0 +1,14 @@
+#chart_values{data: { values: thing.values_for_chart}}
+
+#chart
+
+#overview
+
+%h4 Most recent values
+%ul
+- thing.last_values.each do |value|
+  %li
+    = value.metric.name
+    = value.stamp
+    = value.value
+    = link_to "Improvement Advice", value if value.improvement_advice.present?

@@ -20,16 +20,4 @@
 \|
 = link_to 'Back', metrics_path
 
-#chart_values{data: { values: @metric.values.map{|v| [v.stamp.to_i*1000, v.value] }}}
-
-#chart
-
-#overview
-
-
-%ul
-- @metric.values.limit(100).each do |value|
-  %li
-    = value.stamp
-    = value.value
-    = link_to "Improvement Advice", value if value.improvement_advice.present?
+= render partial: 'partials/timeline', locals: {thing: @metric}

@@ -23,3 +23,6 @@
 
 - @dimension.metrics.each do |metric|
   = render partial: 'metrics/list_item', locals: {metric: metric}
+
+
+= render partial: 'partials/timeline', locals: {thing: @dimension}

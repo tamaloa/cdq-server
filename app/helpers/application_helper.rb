@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def expectation_met_icon(dimension)
-    return fa_icon("check", class: 'green') if dimension.expectation_met?
-    fa_icon("ban", class: 'red') unless dimension.expectation_met?
+  def expectation_met_icon(thing)
+    return fa_icon("check", class: 'green') if thing.expectation_met?
+    fa_icon("ban", class: 'red') unless thing.expectation_met?
   end
 end
