@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313132325) do
+ActiveRecord::Schema.define(version: 20140404133115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140313132325) do
     t.string   "name"
     t.text     "description"
     t.float    "expectation", default: 0.0
-    t.float    "weight"
+    t.float    "weight",      default: 1.0
     t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
