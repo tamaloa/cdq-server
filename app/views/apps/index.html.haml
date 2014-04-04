@@ -1,21 +1,8 @@
-%h1 Listing apps
-
-%table
-  %tr
-    %th Name
-    %th Expectation
-    %th
-    %th
-    %th
-
-  - @apps.each do |app|
-    %tr
-      %td= app.name
-      %td= app.expectation
-      %td= link_to 'Show', app
-      %td= link_to 'Edit', edit_app_path(app)
-      %td= link_to 'Destroy', app, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+- @apps.each do |app|
+  .row
+    .col-md-4
+      =link_to app.name, app
+    .col-md-1
+      = number_with_precision app.current_score
 
 = link_to 'New App', new_app_path

@@ -14,3 +14,6 @@
 %ul
 - @app.dimensions.each do |dimension|
   =render :partial => 'dimensions/list_item', locals: {dimension: dimension}
+
+
+= render partial: 'partials/timeline', locals: {thing: @app}
