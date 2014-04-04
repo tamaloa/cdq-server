@@ -1,23 +1,9 @@
 %p#notice= notice
-
-%p
-  %b Name:
-  = @metric.name
-%p
-  %b Description:
-  = @metric.description
-%p
-  %b Expectation:
-  = @metric.expectation
+= render partial: 'partials/nav_hierarchy', locals: {app: @metric.dimension.app, current_score: @metric.value,
+                                                    dimension: @metric.dimension, metric: @metric}
 %p
   %b Weight:
   = @metric.weight
-%p
-  %b Dimension:
-  = @metric.dimension
 
-= link_to 'Edit', edit_metric_path(@metric)
-\|
-= link_to 'Back', metrics_path
 
 = render partial: 'partials/timeline', locals: {thing: @metric}
