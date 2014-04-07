@@ -2,7 +2,8 @@ class Value < ActiveRecord::Base
   belongs_to :metric
   has_and_belongs_to_many :rollups
 
-  validates_presence_of :metric
+  validates_presence_of :metric, :value
+  validates_numericality_of :value, greater_than_or_equal_to: 0.0, less_than_or_equal_to: 1.0
 
   after_create :add_rollup
 
