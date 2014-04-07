@@ -18,7 +18,3 @@ require 'capistrano-custom/defaults'
 # Setup cron jobs
 #set :whenever_command, "bundle exec whenever"
 #require "whenever/capistrano"
-
-#Notify airbrake of deploy
-require './config/boot'
-require 'airbrake/capistrano'

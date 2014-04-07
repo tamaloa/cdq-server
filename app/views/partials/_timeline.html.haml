@@ -9,6 +9,7 @@
 %h3 Most recent values
 %ul
 - thing.last_values.each do |value|
+  - next unless value
   %li
     = link_to value.metric.name, value.metric if value.metric #TODO Fix values without metric??
     = value.stamp
