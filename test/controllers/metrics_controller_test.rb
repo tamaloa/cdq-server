@@ -3,10 +3,6 @@ require 'test_helper'
 class MetricsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
-  setup do
-    @metric = Metric.create(name: "TestMetric001")
-  end
-
   test "should get index" do
     get :index
     assert_response :success
@@ -31,18 +27,19 @@ class MetricsControllerTest < ActionController::TestCase
   end
 
   test "should show metric" do
-    get :show, id: @metric
+    get :show, id: metrics(:metrics_001).id
     assert_response :success
   end
 
   test "should update metric" do
+    @metric = metrics(:metrics_001)
     patch :update, id: @metric, metric: { description: @metric.description, dimension_id: @metric.dimension_id, expectation: @metric.expectation, name: @metric.name, weight: @metric.weight }
     assert_redirected_to metric_path(assigns(:metric))
   end
 
   test "should destroy metric" do
     assert_difference('Metric.count', -1) do
-      delete :destroy, id: @metric
+      delete :destroy, id: metrics(:metrics_001).id
     end
 
     assert_redirected_to metrics_path
