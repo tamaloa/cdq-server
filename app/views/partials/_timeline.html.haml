@@ -10,7 +10,7 @@
 %ul
 - thing.last_values.each do |value|
   %li
-    = link_to value.metric.name, value.metric
+    = link_to value.metric.name, value.metric if value.metric #TODO Fix values without metric??
     = value.stamp
     = value.value
     = link_to "Improvement Advice", value if value.improvement_advice.present?
