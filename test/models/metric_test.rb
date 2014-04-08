@@ -20,7 +20,7 @@ class MetricTest < ActiveSupport::TestCase
     @metric.record(0.8, timestamp + 5.minutes)
     @metric.record(0, timestamp)
     assert @metric.values.last.value.eql?(0.8)
-    assert @metric.value.eql?(0.8)
+    assert @metric.current_value.eql?(0.8)
   end
 
   test "metric should only record values between zero and one" do

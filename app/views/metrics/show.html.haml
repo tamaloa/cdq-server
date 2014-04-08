@@ -1,5 +1,5 @@
 %p#notice= notice
-= render partial: 'partials/nav_hierarchy', locals: {app: @metric.dimension.app, current_score: @metric.value,
+= render partial: 'partials/nav_hierarchy', locals: {app: @metric.dimension.app, current_score: @metric.current_value,
                                                     dimension: @metric.dimension, metric: @metric}
 %p
   %b Weight:
