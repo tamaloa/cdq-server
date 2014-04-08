@@ -15,7 +15,7 @@ class Metric < ActiveRecord::Base
     value
   end
 
-  def value
+  def current_value
     return 0.0 unless values.last
     values.last.value
   end
@@ -23,7 +23,7 @@ class Metric < ActiveRecord::Base
   def expectation_met?
     return false unless dimension
     return true unless dimension.expectation
-    value >= dimension.expectation
+    current_value >= dimension.expectation
   end
 
   def values_for_chart
