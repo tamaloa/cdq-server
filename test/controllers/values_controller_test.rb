@@ -25,12 +25,6 @@ class ValuesControllerTest < ActionController::TestCase
     assert Value.last.stamp.present?
   end
 
-  test "creating value should create rollups alongside" do
-    assert_difference('Rollup.count', 3*Rollup.resolutions.count) do
-      post :create, value: { metric_id: @value.metric_id, stamp: Time.now.utc, value: @value.value }
-    end
-  end
-
   test "should show value" do
     get :show, id: @value
     assert_response :success

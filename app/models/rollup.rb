@@ -2,33 +2,41 @@ class Rollup < ActiveRecord::Base
   belongs_to :metric
   belongs_to :dimension
   belongs_to :app
-  has_and_belongs_to_many :values
 
-  def self.add(value)
+  def self.calculate(timestamp = Time.now)
     resolutions.each do |resolution|
-      stamp = Resolution.utc_timestamp_for(resolution, value.stamp)
+      resolution_stamp = Resolution.utc_timestamp_for(resolution, timestamp)
 
-      rollup_metric = find_or_create_by(metric: value.metric, stamp: stamp, resolution: resolution)
-      rollup_metric.add_value_and_recalculate(value)
+      Metric.all.each do |metric|
+        rollup_metric = find_or_create_by(metric: metric, stamp: resolution_stamp, resolution: resolution)
+        rollup_metric.add_score_and_recalculate(metric.score(timestamp))
+      end
 
-      rollup_dimension = find_or_create_by(dimension: value.metric.dimension, stamp: stamp, resolution: resolution)
-      rollup_dimension.add_value_and_recalculate(value)
+      Dimension.all.each do |dimension|
+        rollup_dimension = find_or_create_by(dimension: dimension, stamp: resolution_stamp, resolution: resolution)
+        rollup_dimension.add_score_and_recalculate(dimension.score(timestamp))
+      end
 
-      rollup_app = find_or_create_by(app: value.metric.dimension.app, stamp: stamp, resolution: resolution)
-      rollup_app.add_value_and_recalculate(value)
+      App.all.each do |app|
+        rollup_app = find_or_create_by(app: app, stamp: resolution_stamp, resolution: resolution)
+        rollup_app.add_score_and_recalculate(app.score(timestamp))
+      end
+
     end
-
   end
 
   def self.resolutions
     Resolution.defaults
   end
 
-  def add_value_and_recalculate(value)
-    values << value
-    self.avg = values.average(:value)
-    self.max = (max > value.value) ? max : value.value
-    self.min = (min < value.value) ? min : value.value
+  def add_score_and_recalculate(score)
+    return false if score > 1.0
+    return false if score < 0.0
+    self.count += 1
+    self.sum += score
+    self.avg = sum / count
+    self.max = (max > score) ? max : score
+    self.min = (min < score) ? min : score
     save
   end
 

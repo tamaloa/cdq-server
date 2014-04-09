@@ -32,4 +32,16 @@ class DimensionTest < ActiveSupport::TestCase
     assert_equal expected_average, dimension.reload.current_score
   end
 
+  test "dimension score should work with metrics without values" do
+    dimension_with_empty_metrics = Class.new SimpleDelegator do
+      def metrics
+        3.times{Metric.new()}
+      end
+    end
+
+    dimension = dimension_with_empty_metrics.new Dimension.new
+
+    assert_equal 0.0, dimension.score(Time.now)
+  end
+
 end
