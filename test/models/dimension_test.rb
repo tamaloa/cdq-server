@@ -26,9 +26,8 @@ class DimensionTest < ActiveSupport::TestCase
   test "current_score should be weighed average of last metric results" do
     dimension = dimensions(:dimensions_001)
     dimension.metrics.each{|m| m.record(0.5) }
-    metric = Metric.create(dimension: dimension, weight:2)
+    metric = Metric.create!(name: "Another Metric", dimension: dimension, weight:2)
     metric.record(0.0)
-
     expected_average = ( 0.0 + 0.0 + 0.5 + 0.5 ) / 4
     assert_equal expected_average, dimension.reload.current_score
   end

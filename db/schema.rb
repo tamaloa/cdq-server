@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404133115) do
+ActiveRecord::Schema.define(version: 20140409112849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20140404133115) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
-    t.float    "expectation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140404133115) do
     t.string   "name"
     t.text     "description"
     t.float    "expectation", default: 0.0
-    t.float    "weight",      default: 1.0
+    t.integer  "weight",      default: 1
     t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,9 +37,7 @@ ActiveRecord::Schema.define(version: 20140404133115) do
 
   create_table "metrics", force: true do |t|
     t.string   "name"
-    t.text     "description"
-    t.float    "expectation"
-    t.float    "weight",       default: 1.0
+    t.integer  "weight",       default: 1
     t.integer  "dimension_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,18 +54,13 @@ ActiveRecord::Schema.define(version: 20140404133115) do
     t.integer  "metric_id"
     t.integer  "dimension_id"
     t.integer  "app_id"
+    t.float    "sum",          default: 0.0
+    t.integer  "count",        default: 0
   end
 
   add_index "rollups", ["app_id"], name: "index_rollups_on_app_id", using: :btree
   add_index "rollups", ["dimension_id"], name: "index_rollups_on_dimension_id", using: :btree
   add_index "rollups", ["metric_id"], name: "index_rollups_on_metric_id", using: :btree
-
-  create_table "rollups_values", force: true do |t|
-    t.integer "rollup_id"
-    t.integer "value_id"
-  end
-
-  add_index "rollups_values", ["rollup_id", "value_id"], name: "index_rollups_values_on_rollup_id_and_value_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

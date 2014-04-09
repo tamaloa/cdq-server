@@ -33,7 +33,7 @@ class MetricsControllerTest < ActionController::TestCase
 
   test "should update metric" do
     @metric = metrics(:metrics_001)
-    patch :update, id: @metric, metric: { description: @metric.description, dimension_id: @metric.dimension_id, expectation: @metric.expectation, name: @metric.name, weight: @metric.weight }
+    patch :update, id: @metric, metric: { dimension_id: @metric.dimension_id, name: @metric.name, weight: @metric.weight }
     assert_redirected_to metric_path(assigns(:metric))
   end
 

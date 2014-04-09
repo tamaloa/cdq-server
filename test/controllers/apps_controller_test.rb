@@ -18,7 +18,6 @@ class AppsControllerTest < ActionController::TestCase
 
     app = {
         name: 'test-app',
-        expectation: 0.8,
         dimensions: [
             {name: "Bla",
             description: "DA",
@@ -54,7 +53,7 @@ class AppsControllerTest < ActionController::TestCase
   end
 
   test "should update app" do
-    patch :update, id: @app, app: { expectation: @app.expectation, name: @app.name }
+    patch :update, id: @app, app: { name: @app.name }
     assert_redirected_to app_path(assigns(:app))
   end
 
