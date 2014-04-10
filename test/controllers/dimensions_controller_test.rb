@@ -24,10 +24,11 @@ class DimensionsControllerTest < ActionController::TestCase
 
   test "should create dimension and store all attributes" do
     assert_difference('Dimension.count') do
-      post :create, dimension: { app_id: 1, name: "Test-Dimension", weight: 0.5, expectation: 0.5 }
+      post :create, dimension: { app_id: 1, name: "Test-Dimension", weight: 0.5, expectation: 0.5 }, format: :json
     end
 
-    assert_redirected_to dimension_path(assigns(:dimension))
+    assert_response :success
+    assert_not_nil assigns(:dimension)
   end
 
   test "should create dimension with same name for different app" do

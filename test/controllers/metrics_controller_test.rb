@@ -12,10 +12,11 @@ class MetricsControllerTest < ActionController::TestCase
 
   test "should create metric" do
     assert_difference('Metric.count') do
-      post :create, metric: { dimension_id:1, name:"Test-Metric", weight: 1 }
+      post :create, metric: { dimension_id:1, name:"Test-Metric", weight: 1 }, format: :json
     end
 
-    assert_redirected_to metric_path(assigns(:metric))
+    assert_response :success
+    assert_not_nil assigns(:metric)
   end
 
   test "should create metric with same name but in different dimension" do

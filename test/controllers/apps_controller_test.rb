@@ -40,6 +40,16 @@ class AppsControllerTest < ActionController::TestCase
     assert_redirected_to app_path(assigns(:app))
   end
 
+  test "should create another app via json" do
+    app = { "name" => "ipib - (staging)" }
+    assert_nothing_raised do
+      post :create, app: app, format: :json
+    end
+
+    assert_response :success
+    assert_not_nil assigns(:app)
+  end
+
   test "should not create app which already exits" do
     app = { name: 'ipib' }
     assert_no_difference('App.count') do
