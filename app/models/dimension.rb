@@ -9,6 +9,8 @@ class Dimension < ActiveRecord::Base
 
   include Calculations
 
+  after_initialize :set_description
+
   def to_s
     name
   end
@@ -40,6 +42,14 @@ class Dimension < ActiveRecord::Base
 
   def score(stamp)
     weighted_average metrics.map{|m| {:value => m.score(stamp), :weight => m.weight} }
+  end
+
+  private
+
+  def set_description
+    return if name.blank?
+    return unless DefaultDimension.find(name)
+    self.description = DefaultDimension.find(name).description if description.blank?
   end
 
 
