@@ -5,7 +5,7 @@ class DefaultDimension < OpenStruct
   end
 
   def self.find(name)
-    all.select{|d| (d.name == name) }.first
+    all.select{|d| (d.name.downcase == name.downcase) }.first
   end
 
   private
