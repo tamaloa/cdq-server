@@ -44,11 +44,16 @@ class DimensionsControllerTest < ActionController::TestCase
     assert_equal old_expectation, Dimension.find_by_name_and_app_id("Availability", 1).expectation
   end
 
-  test "should update dimension expectation if given" do
+  test "should set dimension expectation if dimension newly created" do
+    post :create, dimension: { app_id: 1, name: "A new Dimension", expectation: 0.7}
+    assert_equal 0.7, Dimension.find_by_name_and_app_id("A new Dimension", 1).expectation
+  end
+
+  test "should not update dimension expectation for already existing dimension" do
     assert_no_difference('Dimension.count') do
-      post :create, dimension: { app_id: 1, name: "Availability", expectation: 0.7}
+      post :create, dimension: {app_id: 1, name: "Availability", expectation: 0.7}
     end
-    assert_equal 0.7, Dimension.find_by_name_and_app_id("Availability", 1).expectation
+    assert_equal 0.3, Dimension.find_by_name_and_app_id("Availability", 1).expectation
   end
 
   test "should show dimension" do
