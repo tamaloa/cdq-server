@@ -44,4 +44,9 @@ class DimensionTest < ActiveSupport::TestCase
     assert_equal 0.0, dimension.score(Time.now)
   end
 
+  test "dimension from the list of data quality dimensions should be set with associated description" do
+    currency = Dimension.new(name: "Currency")
+    assert_equal "The delay until changes in the source reflects in the data.", currency.description
+  end
+
 end
