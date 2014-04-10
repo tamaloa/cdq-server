@@ -61,6 +61,6 @@ class MetricsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def metric_params
-      params.require(:metric).permit(:name, :description, :expectation, :weight, :dimension_id)
+      params.require(:metric).permit(:name, :description, :weight, :dimension_id)
     end
 end
