@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Dimensions:
+  = @subjective_assessment.dimensions
+%p
+  %b App:
+  = @subjective_assessment.app
+
+= link_to 'Edit', edit_subjective_assessment_path(@subjective_assessment)
+\|
+= link_to 'Back', subjective_assessments_path
