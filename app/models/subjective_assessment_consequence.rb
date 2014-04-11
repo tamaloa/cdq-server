@@ -9,9 +9,9 @@ class SubjectiveAssessmentConsequence
 
   def bear
     subjective_assessment.dimensions.each do |dimension|
-      next if dimension[:satisfactory?].eql?(nil)
-      satisfactory_action(real_dimension(dimension)) if dimension[:satisfactory?]
-      unsatisfactory_action(real_dimension(dimension)) unless dimension[:satisfactory?]
+      next unless dimension.key?(:satisfactory)
+      satisfactory_action(real_dimension(dimension)) if dimension[:satisfactory]
+      unsatisfactory_action(real_dimension(dimension)) unless dimension[:satisfactory]
     end
   end
 

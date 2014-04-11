@@ -4,6 +4,7 @@ class SubjectiveAssessmentConsequenceTest < ActiveSupport::TestCase
 
   def setup
     @app = apps(:apps_001)
+    @dimension = @app.dimensions.where(name: 'Availability').first
     @subjective_assessment = SubjectiveAssessment.new(app: @app)
     @consequence = SubjectiveAssessmentConsequence.new(@subjective_assessment)
   end
@@ -17,19 +18,17 @@ class SubjectiveAssessmentConsequenceTest < ActiveSupport::TestCase
   end
 
   test "bearing the consequence of a bad test should increase dimensions expectation" do
-    @bad_dimension = @app.dimensions.first
-    @subjective_assessment.dimensions.first[:satisfactory?] = false
+    @subjective_assessment.dimensions.select{|d| d[:name] == @dimension.name}.first[:satisfactory] = false
     @consequence = SubjectiveAssessmentConsequence.new(@subjective_assessment)
 
-    assert_difference ->{Dimension.find(@bad_dimension.id).expectation}, 0.1 do
+    assert_difference ->{Dimension.find(@dimension.id).expectation}, 0.1 do
       @consequence.bear
     end
 
   end
 
   test "bearing the consequence of a bad test several times should at some point trigger a notification" do
-    @bad_dimension = @app.dimensions.first
-    @subjective_assessment.dimensions.first[:satisfactory?] = false
+   @subjective_assessment.dimensions.select{|d| d[:name] == @dimension.name}.first[:satisfactory] = false
     @consequence = SubjectiveAssessmentConsequence.new(@subjective_assessment)
 
     assert_raise NotificationNotImplemented do
@@ -38,29 +37,30 @@ class SubjectiveAssessmentConsequenceTest < ActiveSupport::TestCase
   end
 
   test "a dimension which satisfies the subject and score smaller than expectation should lower the expectation" do
-    @good_dimension = @app.dimensions.first
-    @good_dimension.update(expectation: 1.0)
-    @subjective_assessment.dimensions.first[:satisfactory?] = true
+    @dimension.update(expectation: 1.0)
+    @dimension.reload
+    @subjective_assessment.dimensions.select{|d| d[:name] == @dimension.name}.first[:satisfactory] = true
     @consequence = SubjectiveAssessmentConsequence.new(@subjective_assessment)
+
+    assert @dimension.current_score <= @dimension.expectation
 
     @consequence.bear
 
-    assert_equal @good_dimension.current_score, @good_dimension.reload.expectation
+    assert_equal @dimension.current_score, @dimension.reload.expectation
 
   end
 
   test "a dimension which satisfies the subject and with a score higher than expectation should do nothing anymore" do
-    @good_dimension = @app.dimensions.first
-    @good_dimension.update(expectation: 0.2)
-    @good_dimension.reload
-    @subjective_assessment.dimensions.first[:satisfactory?] = true
+    @dimension.update(expectation: 0.2)
+    @dimension.reload
+    @subjective_assessment.dimensions.select{|d| d[:name] == @dimension.name}.first[:satisfactory] = true
     @consequence = SubjectiveAssessmentConsequence.new(@subjective_assessment)
 
-    assert @good_dimension.current_score > @good_dimension.expectation
+    assert @dimension.current_score > @dimension.expectation
 
     @consequence.bear
 
-    assert_equal @good_dimension.to_yaml, @good_dimension.reload.to_yaml
+    assert_equal @dimension.to_yaml, @dimension.reload.to_yaml
   end
 
 end
