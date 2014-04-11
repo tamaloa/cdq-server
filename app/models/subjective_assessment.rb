@@ -10,7 +10,7 @@ class SubjectiveAssessment < ActiveRecord::Base
   private
 
   def set_dimensions
-    self.dimensions ||= app.dimensions.map{|d| {name: d.name, description: d.description, :assessment => ''} }
+    self.dimensions ||= app.dimensions.map{|d| {name: d.name, description: d.description, :satisfactory? => nil} }
   end
 
 end
