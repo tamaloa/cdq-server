@@ -1,4 +1,6 @@
 DataQualityCollector::Application.routes.draw do
+  resources :subjective_assessments
+
   resources :values
 
   resources :metric_values
