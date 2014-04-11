@@ -4,14 +4,6 @@ class SubjectiveAssessmentConsequenceTest < ActiveSupport::TestCase
 
   def setup
     @app = apps(:apps_001)
-    # dimension
-    # dimension_with_empty_metrics = Class.new SimpleDelegator do
-    #       def metrics
-    #         3.times{Metric.new()}
-    #       end
-    #     end
-    #
-    #     dimension = dimension_with_empty_metrics.new Dimension.new
     @subjective_assessment = SubjectiveAssessment.new(app: @app)
     @consequence = SubjectiveAssessmentConsequence.new(@subjective_assessment)
   end
