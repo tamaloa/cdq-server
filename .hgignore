@@ -6,7 +6,7 @@ tmp/*
 .bundle/config
 test/fixtures_dump
 
-config/database.yml
+#config/database.yml
 config/application.yml
 
 coverage/*
