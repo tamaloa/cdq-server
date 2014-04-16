@@ -1,0 +1,4 @@
+# Add application configuration variables here, as shown below.
+#
+
+EXPECTATION_STEP: 0.1

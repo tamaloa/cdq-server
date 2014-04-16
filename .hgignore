@@ -6,8 +6,8 @@ tmp/*
 .bundle/config
 test/fixtures_dump
 
-#config/database.yml
-config/application.yml
+config/database.yml
+#config/application.yml
 
 coverage/*
 public/assets/*
