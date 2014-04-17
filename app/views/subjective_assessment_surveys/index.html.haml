@@ -1,7 +1,7 @@
 %h3 New Subjective Assessment
 - App.all.each do |app|
   %ul
-    %li= link_to "Subjective Assessment for #{app.name}", new_subjective_assessment_path(subjective_assessment: {app_id: app})
+    %li= link_to "Subjective Assessment for #{app.name}", new_subjective_assessment_path(subjective_assessment_survey: {app_id: app})
 
 %h3 Listing subjective_assessments
 
@@ -13,7 +13,7 @@
     %th
     %th
 
-  - @subjective_assessments.each do |subjective_assessment|
+  - @subjective_assessment_surveys.each do |subjective_assessment|
     %tr
       %td= subjective_assessment.dimensions
       %td= subjective_assessment.app

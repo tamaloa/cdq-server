@@ -1,10 +1,10 @@
-class SubjectiveAssessmentsController < ApplicationController
+class SubjectiveAssessmentSurveysController < ApplicationController
   before_action :set_subjective_assessment, only: [:show, :edit, :update, :destroy]
 
   # GET /subjective_assessments
   # GET /subjective_assessments.json
   def index
-    @subjective_assessments = SubjectiveAssessment.all
+    @subjective_assessment_surveys = SubjectiveAssessmentSurvey.all
   end
 
   # GET /subjective_assessments/1
@@ -14,7 +14,7 @@ class SubjectiveAssessmentsController < ApplicationController
 
   # GET /subjective_assessments/new
   def new
-    @subjective_assessment = SubjectiveAssessment.new(subjective_assessment_params)
+    @subjective_assessment_survey = SubjectiveAssessmentSurvey.new(subjective_assessment_params)
   end
   # def new
   #   session[:subjective_assessment_params] ||= {app_id: params[:subjective_assessment][:app_id]}
@@ -36,12 +36,12 @@ class SubjectiveAssessmentsController < ApplicationController
   # PATCH/PUT /subjective_assessments/1.json
   def update
     respond_to do |format|
-      if @subjective_assessment.update(subjective_assessment_params)
-        format.html { redirect_to @subjective_assessment, notice: 'Subjective assessment was successfully updated.' }
+      if @subjective_assessment_survey.update(subjective_assessment_params)
+        format.html { redirect_to @subjective_assessment_survey, notice: 'Subjective assessment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @subjective_assessment.errors, status: :unprocessable_entity }
+        format.json { render json: @subjective_assessment_survey.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -49,7 +49,7 @@ class SubjectiveAssessmentsController < ApplicationController
   # DELETE /subjective_assessments/1
   # DELETE /subjective_assessments/1.json
   def destroy
-    @subjective_assessment.destroy
+    @subjective_assessment_survey.destroy
     respond_to do |format|
       format.html { redirect_to subjective_assessments_url }
       format.json { head :no_content }
@@ -59,11 +59,11 @@ class SubjectiveAssessmentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subjective_assessment
-      @subjective_assessment = SubjectiveAssessment.find(params[:id])
+      @subjective_assessment_survey = SubjectiveAssessmentSurvey.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subjective_assessment_params
-      params.require(:subjective_assessment).permit(:app_id, :dimensions)
+      params.require(:subjective_assessment_survey).permit(:app_id, :dimensions)
     end
 end

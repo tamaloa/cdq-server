@@ -1,0 +1,15 @@
+= form_for @subjective_assessment_survey, :class => 'subjective-feedback' do |f|
+  - if @subjective_assessment_survey.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@subjective_assessment_survey.errors.count, "error")} prohibited this subjective_assessment from being saved:"
+      %ul
+        - @subjective_assessment_survey.errors.full_messages.each do |msg|
+          %li= msg
+
+  - @subjective_assessment_survey.dimensions.each do |dimension|
+    = render partial: 'subjective_assessment_surveys/dimension_assessment',
+        locals: {f: f, dimension: dimension}
+
+
+  .actions
+    = f.submit 'Save', id: 'createAssessment'
