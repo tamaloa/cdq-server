@@ -1,4 +1,4 @@
-class SubjectiveAssessment < ActiveRecord::Base
+class SubjectiveAssessmentSurvey < ActiveRecord::Base
   belongs_to :app
   serialize :dimensions
 
