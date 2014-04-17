@@ -1,5 +1,5 @@
 DataQualityCollector::Application.routes.draw do
-  resources :subjective_assessments
+  resources :subjective_assessment_surveys
 
   resources :values
 

@@ -1,4 +1,4 @@
-class SubjectiveAssessmentConsequence
+class SubjectiveAssessmentCycle
   attr_accessor :subjective_assessment
 
 
