@@ -1,14 +1,15 @@
 %fieldset
-  %legend= dimension[:name]
+  %legend= assessment.name
   -#= label_tag 'Name'
   -#= dimension[:name]
   %br
   = label_tag 'Definition'
-  = dimension[:description]
+  = assessment.description
   %br
-  Following the above definition do you feel the applications data quality is:
-  = radio_button_tag("#{dimension[:name]}_satisfying?", true)
-  = label_tag(:good_assessment, "satisfying")
-
-  = radio_button_tag("#{dimension[:name]}_satisfying?", false)
-  = label_tag(:bad_assessment, "not satisfying")
+  Following the above definition if you feel the data quality is satisfying check the box
+  = f.check_box :satisfactory
+  -#= radio_button_tag("#{assessment.name}_satisfying?", true)
+  -#= label_tag(:good_assessment, "satisfying")
+  -#
+  -#= radio_button_tag("#{assessment.name}_satisfying?", false)
+  -#= label_tag(:bad_assessment, "not satisfying")

@@ -14,13 +14,8 @@ class SubjectiveAssessmentSurveysController < ApplicationController
 
   # GET /subjective_assessments/new
   def new
-    @subjective_assessment_survey = SubjectiveAssessmentSurvey.new(subjective_assessment_params)
+    @subjective_assessment_survey = SubjectiveAssessmentSurvey.create(subjective_assessment_params)
   end
-  # def new
-  #   session[:subjective_assessment_params] ||= {app_id: params[:subjective_assessment][:app_id]}
-  #   @subjective_assessment = SubjectiveAssessment.new(session[:subjective_assessment_params])
-  #   @subjective_assessment.current_step = session[:subjective_assessment_step]
-  # end
 
   # GET /subjective_assessments/1/edit
   def edit
@@ -64,6 +59,6 @@ class SubjectiveAssessmentSurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subjective_assessment_params
-      params.require(:subjective_assessment_survey).permit(:app_id, :dimensions)
+      params.require(:subjective_assessment_survey).permit! #FIXME narrow down allowed params
     end
 end
