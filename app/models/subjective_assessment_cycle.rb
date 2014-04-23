@@ -1,23 +1,25 @@
 class SubjectiveAssessmentCycle
-  attr_accessor :subjective_assessment
+  attr_accessor :survey
 
 
-
-  def initialize(subjective_assessment)
-    @subjective_assessment = subjective_assessment
+  def initialize(survey)
+    @survey = survey
   end
 
-  def bear
-    subjective_assessment.dimensions.each do |dimension|
-      next unless dimension.key?(:satisfactory)
-      satisfactory_action(real_dimension(dimension)) if dimension[:satisfactory]
-      unsatisfactory_action(real_dimension(dimension)) unless dimension[:satisfactory]
+  def run
+    survey.subjective_assessments.each do |assessment|
+      next if assessment.satisfactory.eql?(nil)
+      satisfactory_action(assessment.dimension) if assessment.satisfactory
+      unsatisfactory_action(assessment.dimension) unless assessment.satisfactory
     end
   end
 
   def satisfactory_action(dimension)
-    set_expectation_to_current_score(dimension) if dimension.current_score < dimension.expectation
-    do_nothing(dimension)                   unless dimension.current_score < dimension.expectation
+    if dimension.current_score < dimension.expectation
+      set_expectation_to_current_score(dimension)
+    else
+      do_nothing(dimension)
+    end
   end
 
   def set_expectation_to_current_score(dimension)
@@ -25,12 +27,16 @@ class SubjectiveAssessmentCycle
   end
 
   def do_nothing(dimension)
+    p "do nothing"
     true
   end
 
   def unsatisfactory_action(dimension)
-    trigger_root_cause_analytics(dimension) if dimension.current_score <= dimension.expectation
-    increase_expectation(dimension) unless dimension.current_score <= dimension.expectation
+    if dimension.current_score <= dimension.expectation
+      trigger_root_cause_analytics(dimension)
+    else
+      increase_expectation(dimension)
+    end
   end
 
   def increase_expectation(dimension)
@@ -41,10 +47,6 @@ class SubjectiveAssessmentCycle
 
   def trigger_root_cause_analytics(dimension)
     raise NotificationNotImplemented
-  end
-
-  def real_dimension(dimension)
-    Dimension.where(app: subjective_assessment.app, name: dimension[:name]).first
   end
 
 end

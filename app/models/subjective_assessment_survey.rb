@@ -1,16 +1,16 @@
 class SubjectiveAssessmentSurvey < ActiveRecord::Base
   belongs_to :app
-  serialize :dimensions
+  has_many :subjective_assessments
 
   validates_presence_of :app
 
-  after_initialize :set_dimensions
+  after_create :set_subjective_assessments
 
 
   private
 
-  def set_dimensions
-    self.dimensions ||= app.dimensions.map{|d| {name: d.name, description: d.description} }
+  def set_subjective_assessments
+    self.subjective_assessments = app.dimensions.map{|d| SubjectiveAssessment.create!(dimension: d, subjective_assessment_survey: self)}
   end
 
 end
