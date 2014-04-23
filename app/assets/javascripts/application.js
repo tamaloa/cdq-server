@@ -22,7 +22,7 @@
 
 //Multistep form for Assessments
 $(document).ready(function(){
-    $('.new_subjective_assessment').formToWizard({ submitButton: 'createAssessment' })
+    $('.subjective-feedback').formToWizard({ submitButton: 'createAssessment' })
 });
 
 //$(document).on('page:load', draw_chart());

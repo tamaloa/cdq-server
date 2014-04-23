@@ -1,6 +1,7 @@
 class SubjectiveAssessmentSurvey < ActiveRecord::Base
   belongs_to :app
-  has_many :subjective_assessments
+  has_many :subjective_assessments, dependent: :destroy
+  accepts_nested_attributes_for :subjective_assessments
 
   validates_presence_of :app
 

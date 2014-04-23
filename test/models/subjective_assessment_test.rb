@@ -6,5 +6,5 @@ class SubjectiveAssessmentTest < ActiveSupport::TestCase
     assessment = SubjectiveAssessment.create(dimension: Dimension.first)
     assert_equal nil, assessment.satisfactory
   end
-  
+
 end

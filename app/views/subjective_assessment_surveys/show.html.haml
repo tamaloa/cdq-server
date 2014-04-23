@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Dimensions:
-  = @subjective_assessment_survey.dimensions
+  %b Assessments:
+  %ul
+  - @subjective_assessment_survey.subjective_assessments.each do |assessment|
+    %li= "#{assessment.name} was assessed as #{assessment.satisfactory ? '' : 'not'} satisfactory"
 %p
   %b App:
   = @subjective_assessment_survey.app
 
-= link_to 'Edit', edit_subjective_assessment_path(@subjective_assessment_survey)
-\|
-= link_to 'Back', subjective_assessments_path
+
