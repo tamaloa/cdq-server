@@ -27,7 +27,6 @@ class SubjectiveAssessmentCycle
   end
 
   def do_nothing(dimension)
-    p "do nothing"
     true
   end
 
