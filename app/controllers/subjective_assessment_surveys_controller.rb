@@ -30,8 +30,9 @@ class SubjectiveAssessmentSurveysController < ApplicationController
   # PATCH/PUT /subjective_assessments/1
   # PATCH/PUT /subjective_assessments/1.json
   def update
+     update_successful = @subjective_assessment_survey.update(subjective_assessment_params)
     respond_to do |format|
-      if @subjective_assessment_survey.update(subjective_assessment_params)
+      if update_successful && SubjectiveAssessmentCycle.new(@subjective_assessment_survey).run
         format.html { redirect_to @subjective_assessment_survey, notice: 'Subjective assessment was successfully updated.' }
         format.json { head :no_content }
       else
