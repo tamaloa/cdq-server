@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417155603) do
+ActiveRecord::Schema.define(version: 20140423105617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,8 +63,15 @@ ActiveRecord::Schema.define(version: 20140417155603) do
   add_index "rollups", ["metric_id"], name: "index_rollups_on_metric_id", using: :btree
 
   create_table "subjective_assessment_surveys", force: true do |t|
-    t.text     "dimensions"
     t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subjective_assessments", force: true do |t|
+    t.boolean  "satisfactory"
+    t.integer  "subjective_assessment_survey_id"
+    t.integer  "dimension_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

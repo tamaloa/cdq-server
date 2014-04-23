@@ -86,11 +86,11 @@ class RollupTest < ActiveSupport::TestCase
   end
 
   test "rollup should only be calculated if it has not yet been calculated for the given timestamp" do
-    pending
+    skip
   end
 
   test "rollup calculation should try and calculate several missing rollbacks" do
-    pending
+    skip
   end
 
 end
