@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423105617) do
+ActiveRecord::Schema.define(version: 20140424112010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20140423105617) do
   end
 
   add_index "metrics", ["dimension_id"], name: "index_metrics_on_dimension_id", using: :btree
+
+  create_table "notifications", force: true do |t|
+    t.integer  "app_id"
+    t.text     "content"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["app_id"], name: "index_notifications_on_app_id", using: :btree
 
   create_table "rollups", force: true do |t|
     t.datetime "stamp"

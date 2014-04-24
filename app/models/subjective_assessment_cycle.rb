@@ -45,9 +45,9 @@ class SubjectiveAssessmentCycle
   end
 
   def trigger_root_cause_analytics(dimension)
-    raise NotificationNotImplemented
+    Notification.create(app: dimension.app,
+                        title: "Subjective Assessment triggered root cause analysis for #{dimension.app}",
+                        content: "Please analyze why the dimension #{dimension.name} subjective assessment triggered rca.")
   end
 
 end
-
-class NotificationNotImplemented < StandardError ; end
