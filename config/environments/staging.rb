@@ -6,7 +6,7 @@ DataQualityCollector::Application.configure do
   #config.log_level = :debug
 
   #Email-Setup
-  config.action_mailer.delivery_method = :test
+  # config.action_mailer.delivery_method = :test #TODO: revert this as soon as we have production app
 
   #We are not using apache for staging thus we need to serve assets our self
   config.serve_static_assets = true

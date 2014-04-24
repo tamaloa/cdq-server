@@ -5,7 +5,7 @@ class Notification < ActiveRecord::Base
 
 
   def send_email
-    EmailNotification.simple
+    SimpleEmail.simple_email(Figaro.env.send_email_to, title, content).deliver
   end
 
 end
