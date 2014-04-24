@@ -32,8 +32,8 @@ class SubjectiveAssessmentCycleTest < ActiveSupport::TestCase
     @assessment.update(satisfactory: false)
     @assessment_cycle.survey.reload
 
-    assert_raise NotificationNotImplemented do
-      10.times{@assessment_cycle.run}
+    assert_difference ->{ Notification.count } do
+      7.times{@assessment_cycle.run}
     end
   end
 
