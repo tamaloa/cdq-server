@@ -77,4 +77,15 @@ DataQualityCollector::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Email-Setup
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings= {
+      :address              => "ksmtadmz.moez.fraunhofer.de",
+      :port                 => 25,
+      :domain               => "moez.fraunhofer.de",
+      :enable_starttls_auto => false,
+      :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
+  }
+
 end

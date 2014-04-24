@@ -2,3 +2,6 @@
 #
 
 EXPECTATION_STEP: 0.1
+
+SEND_EMAIL_FROM: 'data-quality@moez.fraunhofer.de'
+SEND_EMAIL_TO: 'Michael.Prilop@moez.fraunhofer.de'
