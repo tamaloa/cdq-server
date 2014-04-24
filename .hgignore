@@ -14,3 +14,4 @@ public/assets/*
 *.*.swp
 *.orig
 
+*.sql
