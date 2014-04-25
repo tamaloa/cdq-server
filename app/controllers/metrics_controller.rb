@@ -18,6 +18,8 @@ class MetricsController < ApplicationController
     @metric = Metric.find_by(name: metric_params.fetch(:name), dimension_id: metric_params.fetch(:dimension_id)) ||
         Metric.new(metric_params)
 
+    @metric.description = metric_params.fetch(:description) if metric_params.has_key?(:description)
+
     respond_to do |format|
       if @metric.save
         format.html { redirect_to @metric, notice: 'Metric was successfully created.' }
