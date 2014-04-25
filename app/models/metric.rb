@@ -1,7 +1,7 @@
 class Metric < ActiveRecord::Base
   belongs_to :dimension
   has_many :values, -> { order "stamp" }
-  has_many :rollups
+  has_many :rollups, dependent: :destroy
 
   validates_presence_of :name
   validates_uniqueness_of :name, :scope => :dimension_id
