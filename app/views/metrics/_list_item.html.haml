@@ -3,7 +3,7 @@
     =link_to metric.name, metric
     %p= metric.description
   .col-md-1
-    = "weight: #{metric.weight.try(:to_i)}"
+    = "weight: #{number_with_precision metric.weight.try(:to_f)}"
   .col-md-1
     =expectation_met_icon(metric)
   .col-md-1
