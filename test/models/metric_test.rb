@@ -39,9 +39,9 @@ class MetricTest < ActiveSupport::TestCase
     assert @metric.values_for_chart
   end
 
-  test "metric score should return 0 if no values were recorded" do
+  test "metric score should return nil if no values were recorded" do
     metric_with_no_values = Metric.create(name: "Test")
-    assert_equal 0.0, metric_with_no_values.score(Time.now)
+    assert_equal nil, metric_with_no_values.score(Time.now)
   end
 
 end
