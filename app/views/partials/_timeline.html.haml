@@ -1,6 +1,11 @@
 %h3 Development over Time
 
-#chart_values{data: { values: thing.values_for_chart}}
+#chart_values_main{data: { values: thing.values_for_chart, label: "#{thing.class}-#{thing.name}"}}
+- sub_level = []
+- sub_level = thing.dimensions if thing.is_a?(App)
+- sub_level = thing.metrics if thing.is_a?(Dimension)
+- sub_level.each do |sub_thing|
+  .chart_values_second_level{id: sub_thing.id, data: { values: sub_thing.values_for_chart, label: "#{sub_thing.class}-#{sub_thing.name}"}}
 
 #chart
 
