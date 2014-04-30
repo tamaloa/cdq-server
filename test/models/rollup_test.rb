@@ -93,4 +93,8 @@ class RollupTest < ActiveSupport::TestCase
     skip
   end
 
+  test "rollup should only be calculated if there exist valid values for it" do
+    skip
+  end
+
 end

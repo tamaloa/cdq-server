@@ -8,18 +8,24 @@ class Rollup < ActiveRecord::Base
       resolution_stamp = Resolution.utc_timestamp_for(resolution, timestamp)
 
       Metric.all.each do |metric|
+        score = metric.score(timestamp)
+        next unless score
         rollup_metric = find_or_create_by(metric: metric, stamp: resolution_stamp, resolution: resolution)
-        rollup_metric.add_score_and_recalculate(metric.score(timestamp))
+        rollup_metric.add_score_and_recalculate(score)
       end
 
       Dimension.all.each do |dimension|
+        score = dimension.score(timestamp)
+        next unless score
         rollup_dimension = find_or_create_by(dimension: dimension, stamp: resolution_stamp, resolution: resolution)
-        rollup_dimension.add_score_and_recalculate(dimension.score(timestamp))
+        rollup_dimension.add_score_and_recalculate(score)
       end
 
       App.all.each do |app|
+        score = app.score(timestamp)
+        next unless score
         rollup_app = find_or_create_by(app: app, stamp: resolution_stamp, resolution: resolution)
-        rollup_app.add_score_and_recalculate(app.score(timestamp))
+        rollup_app.add_score_and_recalculate(score)
       end
 
     end
@@ -30,7 +36,7 @@ class Rollup < ActiveRecord::Base
   end
 
   def add_score_and_recalculate(score)
-    return unless score
+    return false unless score
     return false if score > 1.0
     return false if score < 0.0
     self.count += 1
@@ -39,6 +45,16 @@ class Rollup < ActiveRecord::Base
     self.max = (max > score) ? max : score
     self.min = (min < score) ? min : score
     save
+  end
+
+  def self.prepare_dqf
+    Rollup.calculate(Date.new(2012, 5).to_time_in_current_zone)
+    Rollup.calculate(Date.new(2012, 9).to_time_in_current_zone)
+    Rollup.calculate(Date.new(2013, 1).to_time_in_current_zone)
+    Rollup.calculate(Date.new(2013, 5).to_time_in_current_zone)
+    Rollup.calculate(Date.new(2013, 9).to_time_in_current_zone)
+    Rollup.calculate(Date.new(2014, 1).to_time_in_current_zone)
+    Rollup.calculate(Date.new(2014, 5).to_time_in_current_zone)
   end
 
 end
