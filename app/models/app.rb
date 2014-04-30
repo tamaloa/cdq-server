@@ -17,7 +17,7 @@ class App < ActiveRecord::Base
     weighted_values.sum / dimensions.map(&:weight).sum
   end
 
-  def values_for_chart
+  def values_for_chart(resolution = :hour, stamp = Time.now)
     hours_in_one_week = (24*7)
     # points = []
     # hours_in_one_week.times do |number|
@@ -36,8 +36,9 @@ class App < ActiveRecord::Base
   end
 
   def score(stamp)
+    #TODO change here if dimension get weight again
     metrics = dimensions.map(&:metrics).flatten
-    weighted_average metrics.map{|m| {:value => m.score(stamp), :weight => m.weight} }
+    weighted_average metrics.select{|m| m.score(stamp)}.map{|m| {:value => m.score(stamp), :weight => m.weight} }
   end
 
 end

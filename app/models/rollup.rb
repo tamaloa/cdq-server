@@ -30,6 +30,7 @@ class Rollup < ActiveRecord::Base
   end
 
   def add_score_and_recalculate(score)
+    return unless score
     return false if score > 1.0
     return false if score < 0.0
     self.count += 1
