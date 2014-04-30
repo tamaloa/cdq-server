@@ -77,10 +77,10 @@ $(document).ready(function draw_chart() {
 		}
 
 		var options = {
-//            series: {
-//                points: { show: true },
-//                lines: { show: true }
-//            },
+            series: {
+                points: { show: true },
+                lines: { show: true }
+            },
 			xaxis: {
 				mode: "time",
 				tickLength: 5
@@ -102,7 +102,7 @@ $(document).ready(function draw_chart() {
             },
             tooltip: true,
             tooltipOpts: {
-                content: "%s - %y"
+                content: "%s: %y.5"
             }
 		};
 
