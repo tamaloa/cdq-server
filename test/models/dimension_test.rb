@@ -32,7 +32,7 @@ class DimensionTest < ActiveSupport::TestCase
     assert_equal expected_average, dimension.reload.current_score
   end
 
-  test "dimension score should work with metrics without values" do
+  test "dimension score should not report a value for metrics without values" do
     dimension_with_empty_metrics = Class.new SimpleDelegator do
       def metrics
         3.times{Metric.new()}
@@ -41,7 +41,7 @@ class DimensionTest < ActiveSupport::TestCase
 
     dimension = dimension_with_empty_metrics.new Dimension.new
 
-    assert_equal 0.0, dimension.score(Time.now)
+    assert_equal nil, dimension.score(Time.now)
   end
 
   test "dimension from the list of data quality dimensions should be set with associated description" do

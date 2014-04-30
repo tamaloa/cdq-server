@@ -16,6 +16,7 @@ class RollupTest < ActiveSupport::TestCase
 
   test "metric rollups should be autocreated adding a value outside smalles resolution" do
     Timecop.freeze(2013, 12, 1, 13, 10, 0) do
+      Metric.all.each{|m| m.record(0.6)}
       Rollup.calculate(Time.now)
       expected_new_rollups_per_hour = Metric.count + Dimension.count + App.count
       assert_difference ->{ Rollup.count }, expected_new_rollups_per_hour do
@@ -74,12 +75,10 @@ class RollupTest < ActiveSupport::TestCase
     end
   end
 
-  test "rollups should be calculated even if no values exist" do
-
+  test "no rollups should be calculated if no values exist" do
     Value.delete_all
-    number_of_things_to_roll_up = Metric.count + Dimension.count + App.count
-    expected_rollups = number_of_things_to_roll_up * Rollup.resolutions.count
-    assert_difference ->{Rollup.count}, expected_rollups do
+
+    assert_difference ->{Rollup.count}, 0 do
       Rollup.calculate
     end
 
