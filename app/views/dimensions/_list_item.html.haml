@@ -4,7 +4,7 @@
   .col-md-1
     =expectation_met_icon(dimension)
   .col-md-1
-    = number_with_precision dimension.current_score
+    = number_with_precision dimension.score(@filter[:time_till])
   -#
   -#%td= dimension.name
   -#%td= dimension.description

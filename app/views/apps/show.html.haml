@@ -1,6 +1,6 @@
 %p#notice= notice
 
-= render partial: 'partials/nav_hierarchy', locals: {app: @app, current_score: @app.current_score}
+= render partial: 'partials/nav_hierarchy', locals: {app: @app, current_score: @app.score(@filter[:time_till])}
 
 %h3 Dimensions
 %ul
