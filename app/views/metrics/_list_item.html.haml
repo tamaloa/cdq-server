@@ -7,4 +7,4 @@
   .col-md-1
     =expectation_met_icon(metric)
   .col-md-1
-    = "score: #{number_with_precision metric.current_value}"
+    = "score: #{number_with_precision metric.score(@filter[:time_till])}"
