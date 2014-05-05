@@ -11,6 +11,6 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
-      = render 'layouts/messages'
       = render 'partials/resolution_and_time_filter'
-      = yield
+      = render 'layouts/messages'
+      .container= yield
