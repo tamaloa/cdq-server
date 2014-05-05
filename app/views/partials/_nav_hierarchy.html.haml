@@ -1,9 +1,10 @@
 .row.nav-hierarchy
-  .col-md-2
-    =link_to app.name, app if app
-  .col-md-2
-    =link_to dimension.name, dimension if defined?(dimension)
-  .col-md-2
-    =link_to metric.name, metric if defined?(metric)
-  .col-md-1
-    = number_with_precision current_score
+  .col-md-10
+    %ol.breadcrumb
+      %li= link_to app.name, app if app
+      -if defined?(dimension)
+        %li= link_to dimension.name, dimension
+      -if defined?(metric)
+        %li= link_to metric.name, metric
+      %span.pull-right
+        = number_with_precision current_score

@@ -14,27 +14,27 @@ img {
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
-.column {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.form {
-  @extend .col-md-6;
-  }
-.form-centered {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
-  }
+//.column {
+//  @extend .col-md-6;
+//  @extend .text-center;
+//  }
+//.form {
+//  @extend .col-md-6;
+//  }
+//.form-centered {
+//  @extend .col-md-6;
+//  @extend .text-center;
+//  }
+//.submit {
+//  @extend .btn;
+//  @extend .btn-primary;
+//  @extend .btn-lg;
+//  }
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+//  background-color: ;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
@@ -45,4 +45,10 @@ section {
   }
 h3 {
   font-size: medium;
+}
+a {
+  color: #666;
+  &:visited {
+    color: #666;
+  }
 }
