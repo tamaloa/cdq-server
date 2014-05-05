@@ -1,0 +1,9 @@
+.row.filter
+  = form_tag('/filter/set') do
+    = label_tag 'resolution'
+    = select_tag( 'filter[resolution]', options_for_select(Resolution.defaults.map(&:to_s), session[:resolution]) )
+    = label_tag 'from'
+    = date_select 'filter[time_from]', 'time_from', :default => session[:time_from]
+    = label_tag 'till'
+    = date_select 'filter[time_till]', 'time_till', :default => session[:time_till]
+    = submit_tag 'set new filter'

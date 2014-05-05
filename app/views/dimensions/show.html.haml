@@ -13,10 +13,11 @@
   %b Weight:
   = @dimension.weight
 
+= render partial: 'partials/timeline', locals: {thing: @dimension, filter: @filter}
+
 %h3 Metrics
 
 - @dimension.metrics.each do |metric|
   = render partial: 'metrics/list_item', locals: {metric: metric}
 
 
-= render partial: 'partials/timeline', locals: {thing: @dimension}
