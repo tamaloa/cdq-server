@@ -11,12 +11,3 @@
 
 #overview
 
-%h3 Most recent values
-%ul
-- thing.last_values.each do |value|
-  - next unless value #TODO Fix nil values
-  %li
-    = link_to value.metric.name, value.metric
-    = value.stamp
-    = value.value
-    = link_to "Improvement Advice", value if value.improvement_advice.present?

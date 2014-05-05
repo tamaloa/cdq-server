@@ -1,17 +1,18 @@
-%p#notice= notice
+
 
 = render partial: 'partials/nav_hierarchy', locals: {app: @dimension.app, current_score: @dimension.score(@filter[:time_till]),
                                                      dimension: @dimension}
 
-%p
-  %b Description:
-  = @dimension.description
-%p
-  %b Expectation:
-  = @dimension.expectation
-%p
-  %b Weight:
-  = @dimension.weight
+%dl.dl-horizontal
+  %dt Description
+  %dd= @dimension.description
+
+  %dt Expectation
+  %dd= @dimension.expectation
+
+  -#%dt Weight
+  -#%dd= @dimension.weight
+
 
 = render partial: 'partials/timeline', locals: {thing: @dimension, filter: @filter}
 

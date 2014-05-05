@@ -19,8 +19,8 @@
   width: 900px;
 }
 #overview {
-  height: 100px;
-  width: 400px;
+  height: 200px;
+  width: 800px;
 }
 
 .red {
@@ -30,8 +30,12 @@
   color: greenyellow;
 }
 .nav-hierarchy {
+  padding-top: 30px;
+  font-size: large;
+}
+
+ol.breadcrumb {
   background-color: white;
-  padding: 10px;
 }
 
 ul#steps .current {
@@ -39,8 +43,19 @@ ul#steps .current {
 }
 .current:before {
     content: ">> ";
-    color: red;
+    color: indianred;
 }
 ul#steps span {
   margin-left: 6px;
 }
+.filter {
+  padding: 6px;
+  padding-left: 65px;
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
+  border-bottom-width: 1px;
+}
+.filter label {
+  color: darkgrey;
+}
+
