@@ -1,4 +1,5 @@
 DataQualityCollector::Application.routes.draw do
+  post "filter/set"
   resources :subjective_assessment_surveys
 
   resources :values
