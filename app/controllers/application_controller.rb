@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
 
   def initialize_session_filter
-    session[:resolution] =  session[:resolution] || Resolution.defaults.first.to_s
+    session[:resolution] =  session[:resolution] || 'week'
     session[:time_from] = session[:time_from] || Time.now-1.year
     session[:time_till] = session[:time_till] || Time.now
     @filter = {:resolution => session[:resolution],
