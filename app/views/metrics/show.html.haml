@@ -6,4 +6,4 @@
   = @metric.weight
   %p= @metric.description
 
-= render partial: 'partials/timeline', locals: {thing: @metric}
+= render partial: 'partials/timeline', locals: {thing: @metric, filter: @filter}
