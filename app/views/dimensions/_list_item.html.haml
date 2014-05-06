@@ -2,9 +2,9 @@
   .col-md-4
     =link_to dimension.name, dimension
   .col-md-1
-    =expectation_met_icon(dimension)
+    =expectation_met_icon(dimension, @filter[:time_till])
   .col-md-1
-    = number_with_precision dimension.score(@filter[:time_till])
+    = number_with_precision dimension.rollup_score(@filter[:time_till])
   -#
   -#%td= dimension.name
   -#%td= dimension.description

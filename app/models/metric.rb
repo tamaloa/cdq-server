@@ -7,6 +7,7 @@ class Metric < ActiveRecord::Base
   validates_uniqueness_of :name, :scope => :dimension_id
 
   include Charting
+  include Rollups
 
   def to_s
     name
@@ -24,10 +25,12 @@ class Metric < ActiveRecord::Base
     values.last.value
   end
 
-  def expectation_met?
+  def expectation_met?(stamp = Time.now)
     return false unless dimension
     return true unless dimension.expectation
-    current_value >= dimension.expectation
+    score = rollup_score(stamp)
+    return true unless score
+    score >= dimension.expectation
   end
 
 
