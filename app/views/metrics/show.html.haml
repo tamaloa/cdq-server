@@ -1,5 +1,5 @@
 
-= render partial: 'partials/nav_hierarchy', locals: {app: @metric.dimension.app, current_score: @metric.current_value,
+= render partial: 'partials/nav_hierarchy', locals: {app: @metric.dimension.app, current_score: @metric.rollup_score(@filter[:time_till]),
                                                     dimension: @metric.dimension, metric: @metric}
 
 %dl.dl-horizontal

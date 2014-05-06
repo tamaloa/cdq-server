@@ -9,6 +9,7 @@ class Dimension < ActiveRecord::Base
 
   include Calculations
   include Charting
+  include Rollups
 
 
   after_initialize :set_description
@@ -17,9 +18,11 @@ class Dimension < ActiveRecord::Base
     name
   end
 
-  def expectation_met?
+  def expectation_met?(stamp = Time.now)
     return true unless expectation
-    current_score >= expectation
+    score = rollup_score(stamp)
+    return true unless score
+    score >= expectation
   end
 
   def current_score
