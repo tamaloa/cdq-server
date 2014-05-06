@@ -8,7 +8,7 @@
 
 exit unless ENV['PERFORMANCE_SETUP']
 
-measurement_frequency = 1.hour
+measurement_frequency = 1.day
 time_range = 5.years
 total_measurement_runs = time_range / measurement_frequency
 
@@ -52,6 +52,7 @@ total_measurement_runs.to_i.times do |run|
     new_value = 0.0 if new_value < 0.0
     metric.record(new_value , stamp)
   end
+  Rollup.calculate(stamp)
   now = Time.now
   seconds_for_run = now - start
   p "Finished one run in: #{seconds_for_run}"
