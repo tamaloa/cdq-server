@@ -7,6 +7,7 @@ class App < ActiveRecord::Base
 
   include Calculations
   include Charting
+  include Rollups
 
   def to_s
     name

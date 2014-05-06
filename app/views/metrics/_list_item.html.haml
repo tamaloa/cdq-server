@@ -5,6 +5,6 @@
   .col-md-1
     = "weight: #{number_with_precision metric.weight.try(:to_f)}"
   .col-md-1
-    =expectation_met_icon(metric)
+    =expectation_met_icon(metric, @filter[:time_till])
   .col-md-1
-    = "score: #{number_with_precision metric.score(@filter[:time_till])}"
+    = "score: #{number_with_precision metric.rollup_score(@filter[:time_till])}"
