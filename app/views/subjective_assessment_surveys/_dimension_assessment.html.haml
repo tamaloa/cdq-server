@@ -2,14 +2,18 @@
   %legend= assessment.name
   -#= label_tag 'Name'
   -#= dimension[:name]
-  %br
-  = label_tag 'Definition'
-  = assessment.description
-  %br
-  Following the above definition if you feel the data quality is satisfying check the box
-  = f.check_box :satisfactory
-  -#= radio_button_tag("#{assessment.name}_satisfying?", true)
-  -#= label_tag(:good_assessment, "satisfying")
-  -#
-  -#= radio_button_tag("#{assessment.name}_satisfying?", false)
-  -#= label_tag(:bad_assessment, "not satisfying")
+  .row
+    .col-md-4.bg-info
+      %dl
+        %dt Definition
+        %dd=assessment.description
+    .col-md-4
+      Given the definition please answer the following question:
+      Is the application's data quality?
+      %br
+      -#= f.check_box :satisfactory
+      = radio_button_tag("#{assessment.name}_satisfying?", true)
+      = label_tag(:good_assessment, "Yes, satisfying.")
+      %br
+      = radio_button_tag("#{assessment.name}_satisfying?", false)
+      = label_tag(:bad_assessment, "No, not satisfying.")

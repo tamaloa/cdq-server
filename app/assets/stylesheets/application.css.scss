@@ -38,6 +38,7 @@ ol.breadcrumb {
   background-color: white;
 }
 
+//Subjective Feedback forms
 ul#steps .current {
   list-style: none;
 }
@@ -45,9 +46,24 @@ ul#steps .current {
     content: ">> ";
     color: indianred;
 }
-ul#steps span {
-  margin-left: 6px;
+ul#steps span:before {
+  content: " assess data quality for dimension:  "
 }
+ul#steps li {
+  list-style: none;
+}
+
+.subjective-feedback .next {
+  padding: 4px;
+  float: right;
+  background-color: #DFF0D8;
+}
+.subjective-feedback .prev {
+  padding: 4px;
+  background-color: #FCF8E3;
+}
+
+
 .filter {
   padding: 6px;
   padding-left: 65px;
