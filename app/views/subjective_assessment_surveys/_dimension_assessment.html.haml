@@ -11,9 +11,10 @@
       Given the definition please answer the following question:
       Is the application's data quality?
       %br
+      -#= label_tag(:satisfactory, "check for yes")
       -#= f.check_box :satisfactory
-      = radio_button_tag("#{assessment.name}_satisfying?", true)
-      = label_tag(:good_assessment, "Yes, satisfying.")
+      = f.radio_button(:satisfactory, true)
+      = label_tag("Yes, satisfying.")
       %br
-      = radio_button_tag("#{assessment.name}_satisfying?", false)
-      = label_tag(:bad_assessment, "No, not satisfying.")
+      = f.radio_button(:satisfactory, false)
+      = label_tag("No, not satisfying.")
