@@ -24,6 +24,7 @@ group :development do
 end
 group :test do
   gem 'timecop'
+  gem 'minitest-reporters'  # Nice console test reports
 end
 
 gem 'flot-rails'            # js-graphs for displaying development over time
