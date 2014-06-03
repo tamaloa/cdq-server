@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 source 'http://my-very-own-gemserver.example.org"'
 
-ruby '2.0.0'
-
-gem 'rails'
+gem 'rails', '~> 4.0'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
@@ -25,8 +23,6 @@ group :development do
   gem 'rails_layout'
 end
 group :test do
-  gem 'minitest-wscolor'
-  gem 'minitest-reporters'
   gem 'timecop'
 end
 
