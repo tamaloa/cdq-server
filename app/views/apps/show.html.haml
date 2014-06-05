@@ -2,7 +2,7 @@
 
 %h3 Dimensions
 %ul
-- @app.dimensions.each do |dimension|
+- @app.dimensions.order(:name).each do |dimension|
   =render :partial => 'dimensions/list_item', locals: {dimension: dimension}
 
 

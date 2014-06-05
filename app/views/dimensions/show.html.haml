@@ -18,7 +18,7 @@
 
 %h3 Metrics
 
-- @dimension.metrics.each do |metric|
+- @dimension.metrics.order(:name).each do |metric|
   = render partial: 'metrics/list_item', locals: {metric: metric}
 
 
