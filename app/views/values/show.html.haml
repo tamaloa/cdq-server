@@ -1,18 +1,17 @@
 
+= render partial: 'partials/nav_hierarchy', locals: {app: @value.metric.dimension.app, current_score: nil,
+                                                    dimension: @value.metric.dimension, metric: @value.metric}
 
-%p
-  %b Stamp:
-  = @value.stamp
-%p
-  %b Value:
-  = @value.value
-%p
-  %b Metric:
-  = @value.metric
-%p
-  %b Improvement Advice:
-  = @value.improvement_advice.try(:html_safe)
+%dl.dl-horizontal
+  %dt Description
+  %dd= @value.metric.description
 
-= link_to 'Edit', edit_value_path(@value)
-\|
-= link_to 'Back', values_path
+  %dt Assessment timestamp
+  %dd= @value.stamp
+
+  %dt Assessment value
+  %dd= @value.value
+
+
+%h3 Improvement Advice
+%p= @value.improvement_advice.try(:html_safe)
