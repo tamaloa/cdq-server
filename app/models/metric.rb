@@ -41,6 +41,7 @@ class Metric < ActiveRecord::Base
   def score(timestamp)
     last_valid_value = values.where('stamp <= ?', timestamp).order(:stamp).last
     return nil unless last_valid_value
+    return nil if last_valid_value.stamp <= 3.days.ago
     last_valid_value.value
   end
 
