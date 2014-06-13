@@ -41,7 +41,8 @@ class Metric < ActiveRecord::Base
   def score(timestamp)
     last_valid_value = values.where('stamp <= ?', timestamp).order(:stamp).last
     return nil unless last_valid_value
-    return nil if last_valid_value.stamp <= 3.days.ago
+    days_until_metric_vanishes = Figaro.env.days_until_metric_vanishes.to_i.days
+    return nil if last_valid_value.stamp <= timestamp - days_until_metric_vanishes
     last_valid_value.value
   end
 

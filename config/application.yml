@@ -1,7 +1,10 @@
 # Add application configuration variables here, as shown below.
 #
 
+VERSION: 'v0.0.19'
+
 EXPECTATION_STEP: 0.1
+DAYS_UNTIL_METRIC_VANISHES: 3
 
 SEND_EMAIL_FROM: 'data-quality@moez.fraunhofer.de'
 SEND_EMAIL_TO: 'Michael.Prilop@moez.fraunhofer.de'
