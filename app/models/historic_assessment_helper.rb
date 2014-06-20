@@ -23,7 +23,7 @@ class HistoricAssessmentHelper
     metrics = Metric.where(dimension_id: dimensions)
 
     #Remove old Rollups
-    app.each{|a| a.rollups.delete_all}
+    apps.each{|a| a.rollups.delete_all}
     dimensions.each{|d| d.rollups.delete_all}
     metrics.each{|m| m.rollups.delete_all}
 
