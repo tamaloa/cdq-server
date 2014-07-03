@@ -47,21 +47,4 @@ class Rollup < ActiveRecord::Base
     save
   end
 
-  def self.prepare_dqf
-    Rollup.calculate(Date.new(2012, 5).to_time_in_current_zone)
-    Rollup.calculate(Date.new(2012, 9).to_time_in_current_zone)
-    Rollup.calculate(Date.new(2013, 1).to_time_in_current_zone)
-    Rollup.calculate(Date.new(2013, 5).to_time_in_current_zone)
-    Rollup.calculate(Date.new(2013, 9).to_time_in_current_zone)
-    Rollup.calculate(Date.new(2014, 1).to_time_in_current_zone)
-    Rollup.calculate(Date.new(2014, 5).to_time_in_current_zone)
-
-    from = Date.new(2014, 5).to_time_in_current_zone
-    now = Time.now
-    until from >= now do
-      from = from + 1.hour
-      Rollup.calculate(from)
-    end
-  end
-
 end

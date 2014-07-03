@@ -1,6 +1,8 @@
 class App < ActiveRecord::Base
   has_many :dimensions, :dependent => :destroy
   has_many :rollups, :dependent => :destroy
+  has_many :subjective_assessment_surveys, :dependent => :destroy
+  has_many :notifications
 
   validates_presence_of :name
   validates_uniqueness_of :name
