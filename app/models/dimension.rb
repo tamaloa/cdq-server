@@ -3,6 +3,8 @@ class Dimension < ActiveRecord::Base
   has_many :metrics, :dependent => :destroy
   has_many :rollups, :dependent => :destroy
 
+  has_many :subjective_assessments, :dependent => :destroy
+
   validates_presence_of :name
   validates_uniqueness_of :name, :scope => :app_id
   validates_numericality_of :weight, :expectation
