@@ -1,6 +1,6 @@
 class Metric < ActiveRecord::Base
   belongs_to :dimension
-  has_many :values, -> { order "stamp" }
+  has_many :values, -> { order 'stamp ASC' }
   has_many :rollups, dependent: :destroy
 
   validates_presence_of :name
@@ -33,9 +33,8 @@ class Metric < ActiveRecord::Base
     score >= dimension.expectation
   end
 
-
-  def last_values
-    values.limit(10)
+  def recent_values(timestamp = Time.now)
+    values.unscoped.where('stamp <= ?', timestamp).order('stamp DESC').limit(10)
   end
 
   def score(timestamp)
