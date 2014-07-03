@@ -34,7 +34,7 @@ class Metric < ActiveRecord::Base
   end
 
   def recent_values(timestamp = Time.now)
-    values.unscoped.where('stamp <= ?', timestamp).order('stamp DESC').limit(10)
+    values.where('stamp <= ?', timestamp).reorder('stamp DESC').limit(10)
   end
 
   def score(timestamp)
