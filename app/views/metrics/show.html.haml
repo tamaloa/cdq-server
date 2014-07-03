@@ -15,7 +15,7 @@
 %h3 Most recent values
 %ul.list-unstyled
 - @metric.recent_values(@filter[:time_till]).each do |value|
-  - next unless value #TODO Fix nil values
+  - next unless value
   %li
     = link_to value.metric.name, value.metric
     = value.stamp
