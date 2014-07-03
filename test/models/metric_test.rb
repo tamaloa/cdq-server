@@ -27,6 +27,7 @@ class MetricTest < ActiveSupport::TestCase
     timestamp = Time.now
     100.times{@metric.record(0.3, timestamp - 10.minutes)}
     @metric.record(0, timestamp - 5.minutes)
+    metrics(:metrics_002).record(1.0, timestamp)
     @metric.record(0.8, timestamp)
     assert_equal 10, @metric.recent_values.count
     assert_equal 0.8, @metric.recent_values.first.value
