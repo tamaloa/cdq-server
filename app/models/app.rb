@@ -21,12 +21,7 @@ class App < ActiveRecord::Base
     weighted_values.sum / dimensions.map(&:weight).sum
   end
 
-  def last_values
-    dimensions.map{|d| d.last_values}.flatten
-  end
-
   def score(stamp)
-    #TODO change here if dimension get weight again
     metrics = dimensions.map(&:metrics).flatten
     weighted_average metrics.select{|m| m.score(stamp)}.map{|m| {:value => m.score(stamp), :weight => m.weight} }
   end
