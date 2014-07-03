@@ -32,10 +32,6 @@ class Dimension < ActiveRecord::Base
     weighted_average metrics.map{|m| {:value => m.current_value, :weight => m.weight} }
   end
 
-  def last_values
-    metrics.map{|m| m.values.last}
-  end
-
   def score(stamp)
     weighted_average metrics.select{|m| m.score(stamp)}.map{|m| {:value => m.score(stamp), :weight => m.weight} }
   end
