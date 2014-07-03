@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 source 'http://my-very-own-gemserver.example.org"'
 
-gem 'rails', '~> 4.0'
+gem 'rails', '= 4.0.8'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
