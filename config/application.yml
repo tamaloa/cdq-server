@@ -1,10 +1,10 @@
 # Add application configuration variables here, as shown below.
 #
 
-VERSION: 'v0.0.19'
+VERSION: 'v0.0.20'
 
 EXPECTATION_STEP: 0.1
-DAYS_UNTIL_METRIC_VANISHES: 3
+DAYS_UNTIL_METRIC_VANISHES: 7
 
 SEND_EMAIL_FROM: '***REMOVED***'
 SEND_EMAIL_TO: '***REMOVED***'
