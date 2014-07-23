@@ -1,20 +1,19 @@
 :dimensions:
 - :name: Believability
-  :description: The extent to which data are accepted or regarded as true, real, and credible.
+  :description: The extent to which data are accepted or regarded as true, real and credible.
 - :name: Objectivity
   :description: The extent to which data are unbiased (unprejudiced) and impartial.
 - :name: Reputation
   :description: The extent to which data are trusted or highly regarded in terms of their source and history.
-- :name: Syntactic accuracy
+- :name: Syntactic Accuracy
   :description: The extent to which a data value is correct in respect to the definition model.
 - :name: Currency
-  :description: The delay until changes in the source reflects in the data.
+  :description: The delay until changes in the source are reflected in the data.
 - :name: Traceability
-  :description: The extent to which data is well documented, verifiable, and easily attributed to a
-                source.
-- :name: Internal completeness
+  :description: The extent to which data is well documented, verifiable and easily attributed to a source.
+- :name: Internal Completeness
   :description: The extent to which included data are complete in respect to the defined model.
-- :name: Internal consistency
+- :name: Internal Consistency
   :description: The extent to which data follows semantic rules defined over a set of data items.
 - :name: Value added
   :description: The extent to which data are beneficial and provide advantages from their use.
@@ -22,33 +21,27 @@
   :description: The extent to which data are relevant and helpful for the task at hand.
 - :name: Timeliness
   :description: The extent to which the age of the data is appropriate for the task at hand.
-- :name: Model completeness
+- :name: Model Completeness
   :description: The extent to which concepts and their properties needed are not missing.
-- :name: Population completeness
+- :name: Population Completeness
   :description: The extent to which the quantity of data fully represents the real-world population.
-- :name: Amount of data
+- :name: Amount Of Data
   :description: The extent to which the volume of data is appropriate for the task at hand.
-- :name: Semantic accuracy
+- :name: Semantic Accuracy
   :description: The closeness of data values to the true values aimed to be represented.
 - :name: Interpretability
-  :description: The extent to which documentation and metadata are available to correctly
-                interpret the meaning and properties of data.
-- :name: Ease of understanding
-  :description: The extent to which data representations are clear without ambiguity, easily
-                comprehended, and not overwhelming.
-- :name: Representational
-         consistency
-  :description: The extent to which data are always presented in the same format and are
-                compatible with previous data.
+  :description: The extent to which documentation and metadata are available to correctly interpret the meaning and properties of data.
+- :name: Ease Of Understanding
+  :description: The extent to which data representations are clear without ambiguity, easily comprehended and not overwhelming.
+- :name: Representational Consistency
+  :description: The extent to which data are always presented in the same format and are compatible with previous data.
 - :name: Accessibility
-  :description: The ease of accessing the data taking into accounts a consumer's culture, physical
-                status and technologies available.
+  :description: The ease of accessing the data taking into account a consumer's culture, physical status and technologies available.
 - :name: Availability
   :description: The degree to which system availability and response times can be guaranteed.
-- :name: Access security
+- :name: Access Security
   :description: The extent to which access to data can be restricted and hence kept secure.
 - :name: Openness
-  :description: The degree to which data usage and manipulation is granted by license and easy by
-                technical measures such as data format.
+  :description: The degree to which data usage and manipulation is granted by license and easy due to technical measures such as data format.
 - :name: Metadata
-  :description: The extent to which metadata as source, license, or author is present.
+  :description: The extent to which metadata as source, license or author is present.
