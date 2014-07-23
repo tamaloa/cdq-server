@@ -9,12 +9,12 @@
         %dd=assessment.description
     .col-md-4
       Given the definition please answer the following question:
-      Is the application's data quality?
+      Is the data quality satisfying?
       %br
       -#= label_tag(:satisfactory, "check for yes")
       -#= f.check_box :satisfactory
       = f.radio_button(:satisfactory, true)
-      = label_tag("Yes, satisfying.")
+      = label_tag("Yes")
       %br
       = f.radio_button(:satisfactory, false)
-      = label_tag("No, not satisfying.")
+      = label_tag("No")
