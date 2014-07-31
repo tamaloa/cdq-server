@@ -33,7 +33,7 @@ class SubjectiveAssessmentCycleTest < ActiveSupport::TestCase
     @assessment_cycle.survey.reload
 
     assert_difference ->{ Notification.count } do
-      7.times{@assessment_cycle.run}
+      9.times{@assessment_cycle.run}
     end
   end
 
