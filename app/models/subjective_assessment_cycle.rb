@@ -31,7 +31,7 @@ class SubjectiveAssessmentCycle
   end
 
   def unsatisfactory_action(dimension)
-    if dimension.current_score <= dimension.expectation
+    if dimension.expectation == 1.0
       trigger_root_cause_analytics(dimension)
     else
       increase_expectation(dimension)
