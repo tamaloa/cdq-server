@@ -1,4 +1,7 @@
 DataQualityCollector::Application.routes.draw do
+
+  mount PgHero::Engine, at: "pghero"
+
   post "filter/set"
   resources :subjective_assessment_surveys
 
