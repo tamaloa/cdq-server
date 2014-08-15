@@ -35,5 +35,3 @@ gem 'newrelic_rpm'          # Ruby performance management system
 gem 'airbrake'              # When an uncaught exception occurs, Airbrake will POST the relevant data to the Airbrake server specified in your environment.
 
 gem 'whenever'              # For using cron jobs in Ruby
-
-gem 'pghero'
