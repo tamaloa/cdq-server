@@ -18,9 +18,9 @@ group :development do
   gem 'capistrano-custom'     # Custom capistrano tasks and defaults. Allows to easily deploy to a production and a staging server and additionally to three predefined dev domains.
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
-  gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'rubycritic', '= 1.1.1-moez', :require => false
 end
 group :test do
   gem 'timecop'
