@@ -171,7 +171,7 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.6.2)
       sexp_processor (~> 4.1)
-    rubycritic (1.1.1.pre.moez)
+    rubycritic (1.1.1moez)
       flay (= 2.4.0)
       flog (= 4.2.1)
       parser (~> 2.1)
@@ -245,7 +245,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.9)
   rails_layout
-  rubycritic (= 1.1.1.pre.moez)
+  rubycritic (= 1.1.1moez)
   sass-rails
   therubyracer
   timecop
