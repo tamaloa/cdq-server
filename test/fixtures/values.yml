@@ -10,7 +10,7 @@ values_002:
   stamp: '2013-11-29 14:20:10'
   value: '0.846'
   metric_id: '2'
-  improvement_advice: 
+  improvement_advice: "<a href='http://ipib.ci.moez.fraunhofer.de/companies/richter-werdermann-gerbaulet-hofmann'>richter-werdermann-gerbaulet-hofmann</a> failed Company-dq-test_CO-005.<br>"
 values_003:
   id: '3'
   stamp: '2013-11-29 14:20:10'
