@@ -46,9 +46,6 @@ section {
 h3 {
   font-size: medium;
 }
-a {
-  color: #666;
-  &:visited {
+a:visited {
     color: #666;
-  }
 }
