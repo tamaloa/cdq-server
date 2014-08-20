@@ -75,3 +75,9 @@ ul#steps li {
   color: darkgrey;
 }
 
+p#improvement a {
+  color: #46b8da;
+  &:visited {
+    color: #666;
+  }
+}
