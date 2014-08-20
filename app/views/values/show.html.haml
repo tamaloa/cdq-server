@@ -14,4 +14,4 @@
 
 
 %h3 Improvement Advice
-%p= @value.improvement_advice.try(:html_safe)
+%p= unique_links_for_scope(@value.improvement_advice, @value.id).try(:html_safe)
