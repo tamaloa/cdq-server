@@ -1,17 +1,18 @@
 
 = render partial: 'partials/nav_hierarchy', locals: {app: @value.metric.dimension.app, current_score: nil,
                                                     dimension: @value.metric.dimension, metric: @value.metric}
-
-%dl.dl-horizontal
-  %dt Description
-  %dd= @value.metric.description
-
-  %dt Assessment timestamp
-  %dd= @value.stamp
-
-  %dt Assessment value
-  %dd= @value.value
-
+.row
+  .col-md-1
+  .col-md-6
+    .row
+      = "Assessment result for the '#{@value.metric.name}' metric:"
+      = "The assessment carried out at #{@value.stamp.strftime("%H:%M")} on #{@value.stamp.strftime("%B %d, %Y, %A")} "
+      = "reported a metric score of #{@value.value.round(6)}."
+    .row
+      = @value.metric.description unless @value.metric.description.blank?
 
 %h3 Improvement Advice
-%p#improvement= unique_links_for_scope(@value.improvement_advice, @value.id).try(:html_safe)
+.row
+  .col-md-1
+  .col-md-6
+    %p#improvement= unique_links_for_scope(@value.improvement_advice, @value.id).try(:html_safe)
