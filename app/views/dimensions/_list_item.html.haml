@@ -5,12 +5,3 @@
     =expectation_met_icon(dimension, @filter[:time_till])
   .col-md-1
     = number_with_precision dimension.rollup_score(@filter[:time_till])
-  -#
-  -#%td= dimension.name
-  -#%td= dimension.description
-  -#%td= dimension.expectation
-  -#%td= dimension.weight
-  -#%td= dimension.app
-  -#%td= link_to 'Show', dimension
-  -#%td= link_to 'Edit', edit_dimension_path(dimension)
-  -#%td= link_to 'Destroy', dimension, :method => :delete, :data => { :confirm => 'Are you sure?' }
