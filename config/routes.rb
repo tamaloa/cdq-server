@@ -1,4 +1,5 @@
 DataQualityCollector::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   post "filter/set"
   resources :subjective_assessment_surveys
 
