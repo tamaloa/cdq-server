@@ -3,7 +3,6 @@
 
 VERSION: 'v0.0.20'
 
-EXPECTATION_STEP: 0.1
 DAYS_UNTIL_METRIC_VANISHES: 14
 
 SEND_EMAIL_FROM: 'data-quality@moez.fraunhofer.de'
