@@ -55,4 +55,11 @@ class MetricTest < ActiveSupport::TestCase
     assert_nil metric_with_no_values.score(Time.now)
   end
 
+  test "Metric should store abitrary long improvement advice" do
+    advice = "Some long Text! "
+    repeat = 10000
+    @metric.update(improvement_advice: advice * repeat)
+    assert_equal advice.length*repeat, @metric.reload.improvement_advice.length
+  end
+
 end

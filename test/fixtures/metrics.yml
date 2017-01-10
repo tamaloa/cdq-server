@@ -2,267 +2,343 @@
 metrics_001:
   id: '1'
   name: System Availability measured by Pingdom
-  description: Some sort of measurement, mostly not really relevant to us.
   weight: '1'
   dimension_id: '1'
   created_at: '2013-11-29 14:20:24.421394'
   updated_at: '2013-11-29 14:20:24.421394'
+  description: Some sort of measurement, mostly not really relevant to us.
+  improvement_advice: 
 metrics_002:
-  id: '2'
-  name: Average Response Time measured by NewRelic
-  weight: '1'
-  dimension_id: '1'
-  created_at: '2013-11-29 14:20:24.497225'
-  updated_at: '2013-11-29 14:20:24.497225'
-metrics_003:
   id: '3'
   name: Company-description_source
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.314018'
   updated_at: '2013-11-29 14:20:25.314018'
-metrics_004:
+  description: 
+  improvement_advice: 
+metrics_003:
   id: '4'
   name: Company-start_of_operations_source
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.3414'
   updated_at: '2013-11-29 14:20:25.3414'
-metrics_005:
+  description: 
+  improvement_advice: 
+metrics_004:
   id: '5'
   name: Company-end_of_operations_source
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.414694'
   updated_at: '2013-11-29 14:20:25.414694'
-metrics_006:
+  description: 
+  improvement_advice: 
+metrics_005:
   id: '6'
   name: Company-default_market_source
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.446269'
   updated_at: '2013-11-29 14:20:25.446269'
-metrics_007:
+  description: 
+  improvement_advice: 
+metrics_006:
   id: '7'
   name: Company-default_service_source
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.474653'
   updated_at: '2013-11-29 14:20:25.474653'
-metrics_008:
+  description: 
+  improvement_advice: 
+metrics_007:
   id: '8'
   name: Company-category_number_employees_source
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.504232'
   updated_at: '2013-11-29 14:20:25.504232'
-metrics_009:
+  description: 
+  improvement_advice: 
+metrics_008:
   id: '9'
   name: Company-contact_source
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.536295'
   updated_at: '2013-11-29 14:20:25.536295'
-metrics_010:
+  description: 
+  improvement_advice: 
+metrics_009:
   id: '10'
   name: Company-default_taxonomy_sources
   weight: '1'
   dimension_id: '2'
   created_at: '2013-11-29 14:20:25.565599'
   updated_at: '2013-11-29 14:20:25.565599'
-metrics_011:
+  description: 
+  improvement_advice: 
+metrics_010:
   id: '11'
   name: Company-dq-test_CO-001
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.455265'
   updated_at: '2013-11-29 14:20:26.455265'
-metrics_012:
+  description: 
+  improvement_advice: 
+metrics_011:
   id: '12'
   name: Company-dq-test_CO-002
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.47914'
   updated_at: '2013-11-29 14:20:26.47914'
-metrics_013:
+  description: 
+  improvement_advice: 
+metrics_012:
   id: '13'
   name: Company-dq-test_CO-003
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.537994'
   updated_at: '2013-11-29 14:20:26.537994'
-metrics_014:
+  description: 
+  improvement_advice: 
+metrics_013:
   id: '14'
   name: Company-dq-test_CO-004
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.561021'
   updated_at: '2013-11-29 14:20:26.561021'
-metrics_015:
+  description: 
+  improvement_advice: 
+metrics_014:
   id: '15'
   name: Company-dq-test_CO-005
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.582158'
   updated_at: '2013-11-29 14:20:26.582158'
-metrics_016:
+  description: 
+  improvement_advice: 
+metrics_015:
   id: '16'
   name: Company-dq-test_CO-006
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.60441'
   updated_at: '2013-11-29 14:20:26.60441'
-metrics_017:
+  description: 
+  improvement_advice: 
+metrics_016:
   id: '17'
   name: Company-dq-test_CO-007
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.626167'
   updated_at: '2013-11-29 14:20:26.626167'
-metrics_018:
+  description: 
+  improvement_advice: 
+metrics_017:
   id: '18'
   name: Company-dq-test_CO-015
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.64775'
   updated_at: '2013-11-29 14:20:26.64775'
-metrics_019:
+  description: 
+  improvement_advice: 
+metrics_018:
   id: '19'
   name: Company-dq-test_CO-016
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.669512'
   updated_at: '2013-11-29 14:20:26.669512'
-metrics_020:
+  description: 
+  improvement_advice: 
+metrics_019:
   id: '20'
   name: Company-dq-test_CO-017
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.691359'
   updated_at: '2013-11-29 14:20:26.691359'
-metrics_021:
+  description: 
+  improvement_advice: 
+metrics_020:
   id: '21'
   name: Company-dq-test_CO-018
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.712739'
   updated_at: '2013-11-29 14:20:26.712739'
-metrics_022:
+  description: 
+  improvement_advice: 
+metrics_021:
   id: '22'
   name: Company-dq-test_CO-019
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.733686'
   updated_at: '2013-11-29 14:20:26.733686'
-metrics_023:
+  description: 
+  improvement_advice: 
+metrics_022:
   id: '23'
   name: Company-dq-test_CO-021
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.755134'
   updated_at: '2013-11-29 14:20:26.755134'
-metrics_024:
+  description: 
+  improvement_advice: 
+metrics_023:
   id: '24'
   name: Company-dq-test_CO-022
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.777602'
   updated_at: '2013-11-29 14:20:26.777602'
-metrics_025:
+  description: 
+  improvement_advice: 
+metrics_024:
   id: '25'
   name: Company-dq-test_CO-023
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.840602'
   updated_at: '2013-11-29 14:20:26.840602'
-metrics_026:
+  description: 
+  improvement_advice: 
+metrics_025:
   id: '26'
   name: Company-dq-test_CO-024
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.861442'
   updated_at: '2013-11-29 14:20:26.861442'
-metrics_027:
+  description: 
+  improvement_advice: 
+metrics_026:
   id: '27'
   name: Company-dq-test_CO-025
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.883417'
   updated_at: '2013-11-29 14:20:26.883417'
-metrics_028:
+  description: 
+  improvement_advice: 
+metrics_027:
   id: '28'
   name: Company-dq-test_CO-026
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.933117'
   updated_at: '2013-11-29 14:20:26.933117'
-metrics_029:
+  description: 
+  improvement_advice: 
+metrics_028:
   id: '29'
   name: Company-dq-test_CO-008
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.957158'
   updated_at: '2013-11-29 14:20:26.957158'
-metrics_030:
+  description: 
+  improvement_advice: 
+metrics_029:
   id: '30'
   name: Company-dq-test_CO-009
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:26.982181'
   updated_at: '2013-11-29 14:20:26.982181'
-metrics_031:
+  description: 
+  improvement_advice: 
+metrics_030:
   id: '31'
   name: Company-dq-test_CO-010
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:27.043761'
   updated_at: '2013-11-29 14:20:27.043761'
-metrics_032:
+  description: 
+  improvement_advice: 
+metrics_031:
   id: '32'
   name: Company-dq-test_CO-011
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:27.067076'
   updated_at: '2013-11-29 14:20:27.067076'
-metrics_033:
+  description: 
+  improvement_advice: 
+metrics_032:
   id: '33'
   name: Company-dq-test_CO-020
   weight: '1'
   dimension_id: '3'
   created_at: '2013-11-29 14:20:27.089509'
   updated_at: '2013-11-29 14:20:27.089509'
-metrics_034:
+  description: 
+  improvement_advice: 
+metrics_033:
   id: '34'
   name: Company-dq-test_C0-012
   weight: '1'
   dimension_id: '4'
   created_at: '2013-11-29 14:20:27.16299'
   updated_at: '2013-11-29 14:20:27.16299'
-metrics_035:
+  description: 
+  improvement_advice: 
+metrics_034:
   id: '35'
   name: Company-dq-test_C0-013
   weight: '1'
   dimension_id: '4'
   created_at: '2013-11-29 14:20:27.18569'
   updated_at: '2013-11-29 14:20:27.18569'
-metrics_036:
+  description: 
+  improvement_advice: 
+metrics_035:
   id: '36'
   name: Company-count-should-be-1500
   weight: '1'
   dimension_id: '6'
   created_at: '2013-11-29 14:20:27.260566'
   updated_at: '2013-11-29 14:20:27.260566'
-metrics_037:
+  description: 
+  improvement_advice: 
+metrics_036:
   id: '37'
   name: Company-custom_date_format-[:start_of_operations]
   weight: '1'
   dimension_id: '7'
   created_at: '2013-11-29 14:20:27.316052'
   updated_at: '2013-11-29 14:20:27.316052'
-metrics_038:
+  description: 
+  improvement_advice: 
+metrics_037:
   id: '38'
   name: Company-custom_date_format-[:end_of_operations]
   weight: '1'
   dimension_id: '7'
   created_at: '2013-11-29 14:20:27.339561'
   updated_at: '2013-11-29 14:20:27.339561'
+  description: 
+  improvement_advice: 
+metrics_038:
+  id: '2'
+  name: Average Response Time measured by NewRelic
+  weight: '1'
+  dimension_id: '1'
+  created_at: '2013-11-29 14:20:24.497225'
+  updated_at: '2017-01-10 11:37:11.232926'
+  description: 
+  improvement_advice: "<a href='http://my-application.example.org/some_url/big-company'>big-company</a>
+    failed Company-dq-test_CO-005.<br>"
