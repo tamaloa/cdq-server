@@ -22,5 +22,8 @@ module DataQualityCollector
 
     # Opt into new test config - avoid deprecation notices
     config.active_support.test_order = :random
+
+    # Opt-in to new after_commit behaviour
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
