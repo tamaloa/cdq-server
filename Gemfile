@@ -21,7 +21,7 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'rubycritic', '= 1.1.1moez', :require => false
+  gem 'rubycritic', :require => false
   gem 'bundler-audit'
 end
 group :test do
