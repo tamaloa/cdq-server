@@ -37,4 +37,4 @@ gem 'newrelic_rpm'          # Ruby performance management system
 gem 'airbrake', '~> 3.1.0'    #use airbrake version compatible with our errbit
 gem 'whenever'              # For using cron jobs in Ruby
 
-gem 'rails_admin'
+gem 'rails_admin', '~> 0' #as long as production runs on ruby 2.0
