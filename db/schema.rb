@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110111347) do
+ActiveRecord::Schema.define(version: 20170110113235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,7 +112,6 @@ ActiveRecord::Schema.define(version: 20170110111347) do
     t.datetime "stamp"
     t.float    "value"
     t.integer  "metric_id"
-    t.text     "improvement_advice"
   end
 
   add_index "values", ["metric_id"], name: "index_values_on_metric_id", using: :btree
