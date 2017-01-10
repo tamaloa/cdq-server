@@ -41,7 +41,7 @@ class DimensionTest < ActiveSupport::TestCase
 
     dimension = dimension_with_empty_metrics.new Dimension.new
 
-    assert_equal nil, dimension.score(Time.now)
+    assert_nil dimension.score(Time.now)
   end
 
   test "dimension from the list of data quality dimensions should be set with associated description" do
