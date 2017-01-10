@@ -11,7 +11,7 @@ class ViewMainPagesTest < ActionDispatch::IntegrationTest
     assert_response :success
     get '/metrics/1'
     assert_response :success
-    get 'values/1'
+    get '/values/1'
     assert_response :success
   end
 end
