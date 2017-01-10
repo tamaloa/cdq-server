@@ -8,14 +8,18 @@ class ValuesControllerTest < ActionController::TestCase
   end
 
   test "should create value" do
-    assert_difference('Value.count') do
-      post :create, value: { metric_id: @value.metric_id, stamp: Time.now.utc, value: @value.value,
-                             improvement_advice: "Some Abitrary Text! "*100 }
-    end
+    TestAfterCommit.with_commits(true) do
 
-    assert_redirected_to value_path(assigns(:value))
-    assert Value.last.improvement_advice.present?
-    assert Value.last.stamp.present?
+      assert_difference('Value.count') do
+            post :create, value: { metric_id: @value.metric_id, stamp: Time.now.utc, value: @value.value,
+                                   improvement_advice: "Some Abitrary Text! "*100 }
+      end
+
+      assert_redirected_to value_path(assigns(:value))
+      assert Value.last.metric.improvement_advice.present?
+      assert Value.last.stamp.present?
+
+    end
   end
 
   test "should show value" do

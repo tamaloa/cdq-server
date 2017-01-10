@@ -8,11 +8,4 @@ class ValueTest < ActiveSupport::TestCase
     assert_equal weird_time.utc.to_s, value.reload.stamp.to_s
   end
 
-  test "Value should store abitrary long improvement advice" do
-    advice = "Some long Text! "
-    repeat = 10000
-    value = Value.create!(value: 0.23, stamp: Time.now, metric: Metric.first, improvement_advice: advice * repeat)
-    assert_equal advice.length*repeat, value.reload.improvement_advice.length
-  end
-
 end

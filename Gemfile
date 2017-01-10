@@ -26,6 +26,7 @@ group :development do
 end
 group :test do
   gem 'timecop'
+  gem 'test_after_commit'
 end
 
 gem 'flot-rails'            # js-graphs for displaying development over time
