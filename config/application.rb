@@ -19,5 +19,8 @@ module DataQualityCollector
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Opt into new test config - avoid deprecation notices
+    config.active_support.test_order = :random
   end
 end
