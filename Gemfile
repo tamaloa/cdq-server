@@ -7,7 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 1.2'    #Building api results like html pages
 gem 'bootstrap-sass', '>= 3.0.0.0'
 
 gem 'figaro'

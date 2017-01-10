@@ -52,7 +52,7 @@ class MetricTest < ActiveSupport::TestCase
 
   test "metric score should return nil if no values were recorded" do
     metric_with_no_values = Metric.create(name: "Test")
-    assert_equal nil, metric_with_no_values.score(Time.now)
+    assert_nil metric_with_no_values.score(Time.now)
   end
 
 end
