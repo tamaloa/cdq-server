@@ -266,7 +266,7 @@ DEPENDENCIES
   airbrake (~> 3.1.0)
   better_errors
   binding_of_caller
-  bootstrap-sass (>= 3.0.0.0)
+  bootstrap-sass
   bundler-audit
   capistrano-custom
   coffee-rails
@@ -288,7 +288,7 @@ DEPENDENCIES
   therubyracer
   timecop
   turbolinks
-  uglifier (>= 1.3.0)
+  uglifier
   whenever
 
 BUNDLED WITH
