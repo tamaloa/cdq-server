@@ -21,12 +21,6 @@
 //= require jquery.flot.tooltip.min
 //= require_tree .
 
-//Multistep form for Assessments
-$(document).ready(function(){
-    $('.subjective-feedback').formToWizard({ submitButton: 'createAssessment' })
-});
-
-//$(document).on('page:load', draw_chart());
 
 $(document).ready(function draw_chart() {
 
