@@ -1,7 +1,7 @@
 # Add application configuration variables here, as shown below.
 #
 
-VERSION: 'v0.0.20'
+APP_VERSION: 'v0.0.20'
 
 DAYS_UNTIL_METRIC_VANISHES: '14'
 
