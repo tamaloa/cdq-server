@@ -5,6 +5,7 @@ module ApplicationHelper
   end
 
   def unique_links_for_scope(links, scope)
+    return "" if links.nil?
     links.gsub(/(<a href=')(\S*)('>)/, "\\1\\2##{scope}\\3" )
   end
 end
