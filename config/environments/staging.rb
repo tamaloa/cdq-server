@@ -9,6 +9,6 @@ DataQualityCollector::Application.configure do
   config.action_mailer.delivery_method = :test
 
   #We are not using apache for staging thus we need to serve assets our self
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
 end
