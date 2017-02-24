@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
-source 'http://my-very-own-gemserver.example.org"'
 
-gem 'rails', '~> 4.0.9'
+gem 'rails', '~> 4.2'
+gem 'pg'
+
+gem 'devise', '~> 3' #as long as production runs on ruby 2.0
+
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -16,7 +19,8 @@ gem 'haml-rails'
 gem 'therubyracer', :platform=>:ruby
 
 group :development do
-  gem 'capistrano-custom'     # Custom capistrano tasks and defaults. Allows to easily deploy to a production and a staging server and additionally to three predefined dev domains.
+  gem 'capistrano-custom', git: 'https://github.com/tamaloa/capistrano-custom', :tag => 'v0.5.2'
+    # Custom capistrano tasks and defaults. Allows to easily deploy to a production and a staging server and additionally to three predefined dev domains.
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'

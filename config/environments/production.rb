@@ -81,9 +81,9 @@ DataQualityCollector::Application.configure do
   # Email-Setup
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings= {
-      :address              => "***REMOVED***",
+      :address              => "mailserver.example.org",
       :port                 => 25,
-      :domain               => "***REMOVED***",
+      :domain               => "maildomain.example.org",
       :enable_starttls_auto => false,
       :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE
   }
