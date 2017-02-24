@@ -1,6 +1,14 @@
+GIT
+  remote: https://github.com/tamaloa/capistrano-custom
+  revision: d527de085d4242176e6991efa451305ab30d6121
+  tag: v0.5.2
+  specs:
+    capistrano-custom (0.5.2)
+      capistrano (~> 2)
+      capistrano_colors
+
 GEM
   remote: https://rubygems.org/
-  remote: http://my-very-own-gemserver.example.org"/
   specs:
     actionmailer (4.2.7.1)
       actionpack (= 4.2.7.1)
@@ -70,9 +78,6 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    capistrano-custom (0.5.2)
-      capistrano (~> 2)
-      capistrano_colors
     capistrano_colors (0.5.5)
     chronic (0.10.2)
     codeclimate-engine-rb (0.4.0)
@@ -165,9 +170,9 @@ GEM
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (4.0.1)
-    net-ssh-gateway (1.2.0)
-      net-ssh (>= 2.6.5)
+    net-ssh (4.1.0)
+    net-ssh-gateway (2.0.0)
+      net-ssh (>= 4.0.0)
     newrelic_rpm (3.17.2.327)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -296,7 +301,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   bundler-audit
-  capistrano-custom
+  capistrano-custom!
   coffee-rails
   devise (~> 3)
   figaro
