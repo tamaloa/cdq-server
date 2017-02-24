@@ -1,0 +1,20 @@
+# Temporary files, no code, logs, etc.
+/log
+/coverage/
+/tmp
+/public/system
+/test/fixtures_dump
+
+# Configuration which should not be commited
+config/database.yml
+config/application.yml
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
+
+# Editor TMP files, and such stuff
+/.idea
+*.*.swp
+*.orig
+*.sql
