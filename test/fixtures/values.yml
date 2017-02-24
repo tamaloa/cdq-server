@@ -4,232 +4,193 @@ values_001:
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '1'
-  improvement_advice: A longer string suggesting improvements
 values_002:
   id: '2'
   stamp: '2013-11-29 14:20:10'
   value: '0.846'
   metric_id: '2'
-  improvement_advice: "<a href='http://ipib.ci.moez.fraunhofer.de/companies/richter-werdermann-gerbaulet-hofmann'>richter-werdermann-gerbaulet-hofmann</a> failed Company-dq-test_CO-005.<br>"
 values_003:
   id: '3'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '3'
-  improvement_advice: 
 values_004:
   id: '4'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '4'
-  improvement_advice: 
 values_005:
   id: '5'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '5'
-  improvement_advice: 
 values_006:
   id: '6'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '6'
-  improvement_advice: 
 values_007:
   id: '7'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '7'
-  improvement_advice: 
 values_008:
   id: '8'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '8'
-  improvement_advice: 
 values_009:
   id: '9'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '9'
-  improvement_advice: 
 values_010:
   id: '10'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '10'
-  improvement_advice: 
 values_011:
   id: '11'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '11'
-  improvement_advice: 
 values_012:
   id: '12'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '12'
-  improvement_advice: 
 values_013:
   id: '13'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '13'
-  improvement_advice: 
 values_014:
   id: '14'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '14'
-  improvement_advice: 
 values_015:
   id: '15'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '15'
-  improvement_advice: 
 values_016:
   id: '16'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '16'
-  improvement_advice: 
 values_017:
   id: '17'
   stamp: '2013-11-29 14:20:10'
   value: '0.666666666666667'
   metric_id: '17'
-  improvement_advice: 
 values_018:
   id: '18'
   stamp: '2013-11-29 14:20:10'
   value: '0.666666666666667'
   metric_id: '18'
-  improvement_advice: 
 values_019:
   id: '19'
   stamp: '2013-11-29 14:20:10'
   value: '0.5'
   metric_id: '19'
-  improvement_advice: 
 values_020:
   id: '20'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '20'
-  improvement_advice: 
 values_021:
   id: '21'
   stamp: '2013-11-29 14:20:10'
   value: '0.666666666666667'
   metric_id: '21'
-  improvement_advice: 
 values_022:
   id: '22'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '22'
-  improvement_advice: 
 values_023:
   id: '23'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '23'
-  improvement_advice: 
 values_024:
   id: '24'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '24'
-  improvement_advice: 
 values_025:
   id: '25'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '25'
-  improvement_advice: 
 values_026:
   id: '26'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '26'
-  improvement_advice: 
 values_027:
   id: '27'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '27'
-  improvement_advice: 
 values_028:
   id: '28'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '28'
-  improvement_advice: 
 values_029:
   id: '29'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '29'
-  improvement_advice: 
 values_030:
   id: '30'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '30'
-  improvement_advice: 
 values_031:
   id: '31'
   stamp: '2013-11-29 14:20:10'
   value: '0.333333333333333'
   metric_id: '31'
-  improvement_advice: 
 values_032:
   id: '32'
   stamp: '2013-11-29 14:20:10'
   value: '0'
   metric_id: '32'
-  improvement_advice: 
 values_033:
   id: '33'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '33'
-  improvement_advice: 
 values_034:
   id: '34'
   stamp: '2013-11-29 14:20:10'
   value: '0.666666666666667'
   metric_id: '34'
-  improvement_advice: 
 values_035:
   id: '35'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '35'
-  improvement_advice: 
 values_036:
   id: '36'
   stamp: '2013-11-29 14:20:10'
   value: '0.00266666666666667'
   metric_id: '36'
-  improvement_advice: 
 values_037:
   id: '37'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '37'
-  improvement_advice: 
 values_038:
   id: '38'
   stamp: '2013-11-29 14:20:10'
   value: '1'
   metric_id: '38'
-  improvement_advice: 
 values_039:
   id: '39'
   stamp: '2013-11-29 14:20:11'
   value: '0.8'
   metric_id: '1'
-  improvement_advice: 
