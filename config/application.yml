@@ -5,5 +5,5 @@ APP_VERSION: 'v0.0.20'
 
 DAYS_UNTIL_METRIC_VANISHES: '14'
 
-SEND_EMAIL_FROM: 'data-quality@moez.fraunhofer.de'
-SEND_EMAIL_TO: 'Michael.Prilop@moez.fraunhofer.de'
+SEND_EMAIL_FROM: 'cdq-server@example.org'
+SEND_EMAIL_TO: 'somebody@example.org'
