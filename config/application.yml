@@ -5,5 +5,5 @@ APP_VERSION: 'v0.0.20'
 
 DAYS_UNTIL_METRIC_VANISHES: '14'
 
-SEND_EMAIL_FROM: '***REMOVED***'
-SEND_EMAIL_TO: '***REMOVED***'
+SEND_EMAIL_FROM: 'cdq-server@example.org'
+SEND_EMAIL_TO: 'somebody@example.org'
