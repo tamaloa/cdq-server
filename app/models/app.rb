@@ -1,5 +1,6 @@
 class App < ActiveRecord::Base
   has_many :dimensions, :dependent => :destroy
+  has_many :data_assets, :dependent => :destroy
   has_many :rollups, :dependent => :destroy
   has_many :notifications
 

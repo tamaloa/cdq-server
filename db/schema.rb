@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110163319) do
+ActiveRecord::Schema.define(version: 20170317114224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,24 @@ ActiveRecord::Schema.define(version: 20170110163319) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "data_assets", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "app_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "data_assets", ["app_id"], name: "index_data_assets_on_app_id", using: :btree
+
+  create_table "data_assets_metrics", id: false, force: :cascade do |t|
+    t.integer "data_asset_id", null: false
+    t.integer "metric_id",     null: false
+  end
+
+  add_index "data_assets_metrics", ["data_asset_id"], name: "index_data_assets_metrics_on_data_asset_id", using: :btree
+  add_index "data_assets_metrics", ["metric_id"], name: "index_data_assets_metrics_on_metric_id", using: :btree
 
   create_table "dimensions", force: :cascade do |t|
     t.string   "name"
@@ -106,4 +124,5 @@ ActiveRecord::Schema.define(version: 20170110163319) do
   add_index "values", ["metric_id"], name: "index_values_on_metric_id", using: :btree
   add_index "values", ["stamp"], name: "index_values_on_stamp", using: :btree
 
+  add_foreign_key "data_assets", "apps"
 end
