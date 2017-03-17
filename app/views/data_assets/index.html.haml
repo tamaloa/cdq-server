@@ -1,0 +1,17 @@
+%h1 Listing data_assets
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th App
+      %th
+
+  %tbody
+    - @data_assets.each do |data_asset|
+      %tr
+        %td= data_asset.name
+        %td= data_asset.description
+        %td= data_asset.app
+        %td= link_to 'Show', data_asset

@@ -16,4 +16,12 @@ class DataAsset < ActiveRecord::Base
     average metrics.map{|metric| metric.current_value}
   end
 
+  #Some stuff to make it quack like a Dimension
+  def expectation_met?(*args)
+    true
+  end
+  def expectation
+    0.5
+  end
+
 end

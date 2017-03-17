@@ -15,6 +15,8 @@ DataQualityCollector::Application.routes.draw do
 
   resources :dimensions
 
+  resources :data_assets
+
   resources :apps
 
   root :to => "apps#index"

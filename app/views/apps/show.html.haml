@@ -1,9 +1,17 @@
 = render partial: 'partials/nav_hierarchy', locals: {app: @app, current_score: @app.rollup_score(@filter[:time_till])}
 
-%h3 Dimensions
-%ul
-- @app.dimensions.order(:name).each do |dimension|
-  =render :partial => 'dimensions/list_item', locals: {dimension: dimension}
+.row
+  .col-md-6
+    %h3 Dimensions
+    %ul
+    - @app.dimensions.order(:name).each do |dimension|
+      =render :partial => 'dimensions/list_item', locals: {dimension: dimension}
+
+  .col-md-6
+    %h3 Data Assets
+    %ul
+    - @app.data_assets.order(:name).each do |data_asset|
+      =render partial: 'dimensions/list_item', locals: {dimension: data_asset}
 
 
 = render partial: 'partials/timeline', locals: {thing: @app, filter: @filter}
