@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.2'
 gem 'pg'
 
-gem 'devise', '~> 3' #as long as production runs on ruby 2.0
+gem 'devise'
 
 gem 'sass-rails'
 gem 'uglifier'
