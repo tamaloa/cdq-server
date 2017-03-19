@@ -11,7 +11,7 @@ class Metric < ActiveRecord::Base
   include Rollups
 
   def to_s
-    name
+    "#{dimension.try(:app).name}-#{name}"
   end
 
   def record(value, stamp = Time.now)
