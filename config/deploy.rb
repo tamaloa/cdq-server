@@ -1,24 +1,39 @@
-############################################
-# Set all main information here and
-# override defaults set by capistrano-custom
-############################################
+# config valid only for current version of Capistrano
+lock "3.7.2"
 
-set :application, "collector"
-set :repository,  "http://my-private-repo.example.org"
-set :parent_domain, "my-domain.example.org"
+set :application, "cdq-server"
+set :repo_url, "https://github.com/tamaloa/cdq-server.git"
 
+append :linked_files, "config/database.yml", "config/application.yml"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-# We only load our custom recipes after specifying the main variables above
-require 'capistrano-custom/recipes'
-require 'capistrano-custom/defaults'
+set :passenger_restart_with_touch, true
 
 
-# The following tasks are more specific and should only be used if necessary
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-# Setup cron jobs
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
+# Default deploy_to directory is /var/www/my_app_name
+# set :deploy_to, "/var/www/my_app_name"
 
-#Notify airbrake of deploy
-require './config/boot'
-require 'airbrake/capistrano'
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
+
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
+
+# Default value for :pty is false
+# set :pty, true
+
+# Default value for :linked_files is []
+# append :linked_files, "config/database.yml", "config/secrets.yml"
+
+# Default value for linked_dirs is []
+# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for keep_releases is 5
+# set :keep_releases, 5

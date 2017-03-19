@@ -1,0 +1,11 @@
+# Add application configuration variables here, as shown below.
+#
+
+DAYS_UNTIL_METRIC_VANISHES: '14'
+
+SEND_EMAIL_FROM: 'cdq-server@example.org'
+SEND_EMAIL_TO: 'somebody@example.org'
+
+STAGING_DEPLOYMENT_SERVER: 'some-server.example.org'
+
+PRODUCTION_DEPLOYMENT_SERVER: 'some-server.example.org'
