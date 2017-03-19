@@ -1,0 +1,16 @@
+---
+data_assets_001:
+  id: '980190963'
+  name: Specialization profile
+  description: A complex calculation using many datapoints is carried out to determine
+    the specialization.
+  app_id: '1'
+  created_at: '2017-03-17 11:50:37.684333'
+  updated_at: '2017-03-17 11:50:37.684333'
+data_assets_002:
+  id: '980190964'
+  name: Nearby search
+  description: We need data to provide geo-location aware search.
+  app_id: 
+  created_at: '2017-03-17 11:51:45.916421'
+  updated_at: '2017-03-17 11:51:45.916421'

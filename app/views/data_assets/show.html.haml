@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @data_asset.name
+%p
+  %b Description:
+  = @data_asset.description
+%p
+  %b App:
+  = @data_asset.app
+
+= link_to 'Edit', edit_data_asset_path(@data_asset)
+\|
+= link_to 'Back', data_assets_path

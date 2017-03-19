@@ -1,5 +1,6 @@
 class Metric < ActiveRecord::Base
   belongs_to :dimension
+  has_and_belongs_to_many :data_assets
   has_many :values, -> { order 'stamp ASC' }
   has_many :rollups, dependent: :destroy
 
@@ -10,7 +11,7 @@ class Metric < ActiveRecord::Base
   include Rollups
 
   def to_s
-    name
+    "#{dimension.try(:app).name}-#{name}"
   end
 
   def record(value, stamp = Time.now)
