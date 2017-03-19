@@ -5,7 +5,7 @@ Previously was located in an mercurial based private repository. Cleaned up the 
 
 ## Badges
 
-!https://travis-ci.org/tamaloa/cdq-server.svg?branch=master!:https://travis-ci.org/tamaloa/cdq-server
+[![Build Status](https://travis-ci.org/tamaloa/cdq-server.svg?branch=master)](https://travis-ci.org/tamaloa/cdq-server)
 [![Code Climate](https://codeclimate.com/github/tamaloa/cdq-server/badges/gpa.svg)](https://codeclimate.com/github/tamaloa/cdq-server)
 [![Test Coverage](https://codeclimate.com/github/tamaloa/cdq-server/badges/coverage.svg)](https://codeclimate.com/github/tamaloa/cdq-server/coverage)
 
