@@ -73,6 +73,9 @@ GEM
     capistrano-bundler (1.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-figaro (1.0.0.0)
+      capistrano (~> 3.1)
+      figaro (~> 1.1)
     capistrano-harrow (0.5.3)
     capistrano-passenger (0.2.0)
       capistrano (~> 3.0)
@@ -298,6 +301,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   bundler-audit
+  capistrano-figaro
   capistrano-passenger
   capistrano-rails
   coffee-rails

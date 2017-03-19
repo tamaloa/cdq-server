@@ -4,6 +4,12 @@ lock "3.7.2"
 set :application, "cdq-server"
 set :repo_url, "https://github.com/tamaloa/cdq-server.git"
 
+append :linked_files, "config/database.yml", "config/application.yml"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+
+set :passenger_restart_with_touch, true
+
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

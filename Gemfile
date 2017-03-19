@@ -21,6 +21,7 @@ gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'capistrano-rails'      # Remote multi-server automation tool -> "$ cap deploy" to rollout this app
   gem 'capistrano-passenger'  # Restart passenger web servers on deploys
+  gem 'capistrano-figaro'     # Use figaro variables during deployment (i.e. deployment server settings)
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'
