@@ -1,16 +1,16 @@
 base: &base
   adapter: postgresql
   encoding: unicode
-  username: teamcity-worker
+  username: postgres
 
 development:
-  database: data_quality_collector_development
+  database: cdq_server_development
   <<: *base
 
 test:
-  database: data_quality_collector_test
+  database: cdq_server_test
   <<: *base
 
 staging:
-  database: data_quality_collector_staging
+  database: cdq_server_staging
   <<: *base

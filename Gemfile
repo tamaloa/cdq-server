@@ -30,6 +30,8 @@ group :development do
   gem 'bundler-audit'
 end
 group :test do
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
   gem 'timecop'
   gem 'test_after_commit'
 end

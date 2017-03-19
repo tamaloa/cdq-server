@@ -1,0 +1,20 @@
+language: ruby
+
+services:
+  - postgresql
+
+script:
+- bundle exec rake db:setup
+- bundle exec rake test
+
+before_script:
+  - cp config/application.dist.yml config/application.yml
+  - cp config/database.dist.yml config/database.yml
+  - psql -c 'create database cdq_server_test;' -U postgres
+
+addons:
+  code_climate:
+    repo_token: 255eb4f6570d64da0be7123abbebcde8da3ba2f804560c6310060613e17e373c
+
+after_success:
+  - bundle exec codeclimate-test-reporter

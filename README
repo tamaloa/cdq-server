@@ -1,9 +1,0 @@
-Data Quality Collector
-========================
-
-
-Previously was located in an mercurial based private repository. Cleaned up the repository (removed any private/secrete information) using the mq mercurial extension (see http://stackoverflow.com/a/1188083/935019 ) in preperation for move to github.
-________________________
-
-License: GPL v3.0
-Contributing: [guidelines](.github/contributing.md)
